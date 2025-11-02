@@ -1,6 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 
     public void SetController(PlayerController controller)
     {
-        if(playerControls.IsUnityNull())
+        if(playerControls == null)
         {
             playerControls = new PlayerControls();
         }

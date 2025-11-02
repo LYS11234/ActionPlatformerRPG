@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 
@@ -10,23 +10,26 @@ public class PlayerController : CharacterController
     [SerializeField]
     protected CameraManager playerCam;
     #endregion
-
-    public event Action<uint> OnShotFired;
-
     [SerializeField]
-    private uint bulletCount;
+    private int bulletCount;
+    public event Action<int> OnShotFired;
+    private Vector2 gunDirection = Vector2.zero;
+    
 
+    private RaycastHit2D[] rayHits = new RaycastHit2D[byte.MaxValue];
+    private Collider2D[] overlapHits = new Collider2D[byte.MaxValue];
    
+    private List<CharacterController> hitList = new List<CharacterController>();
 
 
     protected override void Start()
     {
         base.Start();
-        StandOffset = new Vector2(boxCollider.offset.x, boxCollider.offset.y);
-        StandSize = new Vector2(boxCollider.size.x, boxCollider.size.y);
-        CrouchOffset = new Vector2(boxCollider.offset.x, -0.5f);
-        CrouchSize = new Vector2(boxCollider.size.x, StandSize.y * 0.5f);
-        
+        StandOffset = new Vector2(collider.offset.x, collider.offset.y);
+        StandSize = new Vector2(collider.size.x, collider.size.y);
+        CrouchOffset = new Vector2(collider.offset.x, -0.5f);
+        CrouchSize = new Vector2(collider.size.x, StandSize.y * 0.5f);
+        StartUI();
     }
 
     public void StartUI()
@@ -35,9 +38,7 @@ public class PlayerController : CharacterController
     }
     protected override void FixedUpdate()
     {
-        base.FixedUpdate();
-        canAttack = CanAttack;
-        
+        base.FixedUpdate();        
     }
 
     //public override void MoveView(Vector2 dir)
@@ -89,6 +90,11 @@ public class PlayerController : CharacterController
             IsShooting = false;
             return;
         }
+        if(!canAttack)
+        {
+            IsShooting = false;
+            return;
+        }
         IsShooting = context.ReadValueAsButton();
     }
 
@@ -109,26 +115,39 @@ public class PlayerController : CharacterController
         ChangeState(IdleState);
     }
 
-    public override void AttackCheck()
+
+    #region Attack
+
+    public override void Attack()
+    {
+        base.Attack();
+        NextAttackMotion();
+        Source.clip = AttackSounds[(int)AttackMotion - 1];
+        Source.Play();
+        // 공격 함수 추가
+        AttackCheck();
+        Animator.SetFloat(attackHash, AttackMotion);
+        Animator.SetTrigger(isAttackHash);
+    }
+
+    protected override void AttackCheck()
     {
         base.AttackCheck();
         int num = (int)AttackMotion - 1;
         Vector2 attackPos = new Vector2(characterTransform.position.x + attackPoses[num].x * dir, characterTransform.position.y + attackPoses[num].y);
 
-        Collider2D[] hits = Physics2D.OverlapBoxAll(attackPos, attackSizes[num], 0, hitLayer);
-        CharacterController[] hitChars = new CharacterController[hits.Length];
-        int _count = 0;
+        int _count = Physics2D.OverlapBox(attackPos, attackSizes[num], 0, contactFilter, overlapHits);
 
-        for (int i = 0; i < hits.Length; i++)
+        for (int i = 0; i < _count; i++)
         {
-            if (!hits[i].TryGetComponent<CharacterController>(out hitChars[_count]))
+            if (!overlapHits[i].TryGetComponent<CharacterController>(out CharacterController hitChar))
             {
                 continue;
             }
-            _count++;
+            hitList.Add(hitChar);
         }
 
-        if (_count <= 0)
+        if (hitList.Count <= 0)
         {
             return;
         }
@@ -136,28 +155,85 @@ public class PlayerController : CharacterController
         {
             case 3:
                 {
-                    ThirdAttack(hitChars);
+                    ThirdAttack(hitList);
                     break;
                 }
             default:
                 {
-                    hitChars[0].GetDamage(1);
+                    hitList[0].GetDamage(1);
                     break;
                 }
         }
-
+        hitList.Clear();
         
     }
 
-    private void ThirdAttack(CharacterController[] hits)
+    private void ThirdAttack(List<CharacterController> hits)
     {
-        for(int i = 0; i < hits.Length; i++)
+        for(int i = 0; i < hits.Count; i++)
         {
-            if(hits[i] == null)
-            {
-                break;
-            }
             hits[i].GetDamage(1);
         }
+    }
+
+    public override void CheckBulletHit()
+    {
+        base.CheckBulletHit();
+        gunDirection.x = dir;
+        if (MoveInput.y < 0)
+        {
+            gunDirection.y = -1;
+        }
+        else if (MoveInput.y > 0)
+        {
+            gunDirection.y = 1;
+        }
+        else
+        {
+            gunDirection.y = 0;
+        }
+        int _count = Physics2D.Raycast(characterTransform.position, gunDirection, contactFilter, rayHits, 100);
+
+        for (int i = 0; i < _count; i++)
+        {
+            if (!rayHits[i].transform.TryGetComponent<CharacterController>(out CharacterController hitChar))
+            {
+                continue;
+            }
+            hitList.Add(hitChar);
+        }
+        if (hitList.Count <= 0)
+        {
+            return;
+        }
+        for (int i = 0; i < hitList.Count; i++)
+        {
+            hitList[i].GetDamage(2);
+        }
+        hitList.Clear();
+    }
+
+    public override void Fire()
+    {
+        base.Fire();
+        ChangeCanAttack();
+        Animator.SetFloat(shootHash, MoveInput.y);
+        Animator.SetTrigger(isShootHash);
+        CheckBulletHit();
+    }
+
+    #endregion
+    public override void StartJump()
+    {
+        base.StartJump();
+        Animator.SetBool(jumpHash, true);
+        int num = UnityEngine.Random.Range(0, JumpSounds.Length);
+        Source.clip = JumpSounds[num];
+        Source.Play();
+    }
+
+    public override void Jump()
+    {
+        base.Jump();
     }
 }

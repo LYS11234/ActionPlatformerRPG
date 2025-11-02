@@ -1,5 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
@@ -21,6 +20,7 @@ public class CameraManager : MonoBehaviour
 
     private Camera thisCam;
 
+    private Vector3 currentPos = Vector3.zero;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -37,7 +37,7 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if(target.IsUnityNull())
+        if(target == null)
         {
             return;
         }
@@ -66,6 +66,10 @@ public class CameraManager : MonoBehaviour
         float clampX = Mathf.Clamp(transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
         float clampY = Mathf.Clamp(transform.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
 
-        transform.position = new Vector3(clampX, clampY, transform.position.z);
+        currentPos.x = clampX;
+        currentPos.y = clampY;
+        currentPos.z = transform.position.z;
+
+        transform.position = currentPos;
     }
 }

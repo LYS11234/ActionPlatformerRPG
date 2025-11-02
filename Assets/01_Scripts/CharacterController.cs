@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
@@ -38,7 +37,7 @@ public class CharacterController : MonoBehaviour
     public AudioClip[] JumpSounds { get {return jumpSounds; } }
     #endregion Audio Clips
     #endregion Audio
-
+    [Space(30)]
     #region Status
     [SerializeField]
     protected float currentMoveSpeed;
@@ -74,34 +73,48 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     protected float dir;
 
-    [SerializeField]
     public Vector2 CrouchSize { get; protected set; }
-    [SerializeField]
     public Vector2 StandSize { get; protected set; }
-    [SerializeField]
     public Vector2 CrouchOffset {  get; protected set; }
-    [SerializeField]
     public Vector2 StandOffset { get; protected set; }
     #endregion
 
+    #region State Hashes
+
+    protected int idleHash = Animator.StringToHash("Idle");
+    protected int motionsHash = Animator.StringToHash("Motions");
+    protected int moveHash = Animator.StringToHash("Move");
+    protected int attackHash = Animator.StringToHash("Attack");
+    protected int isAttackHash = Animator.StringToHash("IsAttack");
+    protected int shootHash = Animator.StringToHash("Shoot");
+    protected int isShootHash = Animator.StringToHash("IsShoot");
+    protected int jumpHash = Animator.StringToHash("Jump");
+    protected int velYHash = Animator.StringToHash("VelY");
+    protected int crouchHash = Animator.StringToHash("Crouch");
+
+    #endregion
+
     #region Components
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     [SerializeField]
-    private Rigidbody2D rigidBody;
+    protected Rigidbody2D rigidBody;
+    public Rigidbody2D RigidBody { get { return rigidBody; } }
     [SerializeField]
-    private Animator animator;
+    protected Animator animator;
+    public Animator Animator { get { return animator; } }
     [SerializeField]
     protected Transform characterTransform;
     [SerializeField]
-    protected BoxCollider2D boxCollider;
+    protected BoxCollider2D collider;
+    public BoxCollider2D Collider { get { return collider; } }  
 
     [SerializeField]
     protected Vector2[] attackSizes;
     [SerializeField]
     protected Vector2[] attackPoses;
     [SerializeField]
-    protected LayerMask hitLayer;
-
+    protected ContactFilter2D contactFilter;
+    public bool IsJump { get { return Animator.GetBool(jumpHash); } }
     #endregion
 
     protected void Awake()
@@ -122,7 +135,7 @@ public class CharacterController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         characterTransform = GetComponent<Transform>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         characterState = IdleState;
         CanAttack = true;
         characterState.Enter(this);
@@ -134,57 +147,17 @@ public class CharacterController : MonoBehaviour
         characterState.Execute(this);
     }
 
-    public Animator GetAnimator()
+    #region Common
+    public void CheckDir()
     {
-        return animator;
-    }
-
-    public Rigidbody2D GetRigidBody()
-    {
-        return rigidBody;
-    }
-
-
-    protected void ChangeIdleMotion()
-    {
-        UnityEngine.Random.InitState(DateTime.Now.Millisecond);
-        IdleMotion = UnityEngine.Random.Range(1, 101);
-        animator.SetFloat("Idle", IdleMotion % 2);
-    }
-
-    public void PlayIdleSound()
-    {
-        Source.clip = IdleSounds[(int)animator.GetFloat("Idle")];
-        Source.Play();
-    }    
-    public void IsRun()
-    {
-        currentMoveSpeed = moveSpeed * runSpeed + (moveSpeed * additionalSpeed);
-    }
-
-    public void IsWalk()
-    {
-        currentMoveSpeed = moveSpeed + (moveSpeed * additionalSpeed);
-    }
-
-    public bool IsRunning()
-    {
-        return IsSprinting;
-    }
-
-    public Vector2 GetMoveInput()
-    {
-        return MoveInput;
-    }
-
-    public SpriteRenderer GetSpriteRenderer()
-    {
-        return spriteRenderer;
-    }
-
-    public BoxCollider2D GetCollider()
-    {
-        return boxCollider;
+        if (MoveInput.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (MoveInput.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     public void ChangeState(ICharacterState _state)
@@ -195,21 +168,57 @@ public class CharacterController : MonoBehaviour
         characterState.Enter(this);
     }
 
+    #endregion
+
+    #region Idle
+    protected void ChangeIdleMotion()
+    {
+        UnityEngine.Random.InitState(DateTime.Now.Millisecond);
+        IdleMotion = UnityEngine.Random.Range(1, 101);
+        Animator.SetFloat(idleHash, IdleMotion % 2);
+    }
+
+    public void PlayIdleSound()
+    {
+        Source.clip = IdleSounds[(int)Animator.GetFloat(idleHash)];
+        Source.Play();
+    }
+    #endregion
+
+    #region Move
+    public void IsRun()
+    {
+        currentMoveSpeed = moveSpeed * runSpeed + (moveSpeed * additionalSpeed);
+        Animator.SetFloat(moveHash, 2);
+    }
+
+    public void IsWalk()
+    {
+        currentMoveSpeed = moveSpeed + (moveSpeed * additionalSpeed);
+        Animator.SetFloat(moveHash, 1);
+    }
+
+    
+
+    public void ResetMove()
+    {
+        Animator.SetFloat(moveHash, 0);
+    }
     public void Move()
     {
-        rigidBody.linearVelocityX = MoveInput.x * currentMoveSpeed;
+        RigidBody.linearVelocityX = MoveInput.x * currentMoveSpeed;
     }
 
-    public void Jump()
+    #endregion
+
+    #region Attack
+
+    public virtual void Attack()
     {
-        if(animator.GetBool("Jump"))
-        {
-            return;
-        }
-        rigidBody.AddForceY(jumpForce, ForceMode2D.Impulse);
+        
     }
 
-    public void NextAttackMotion()
+    protected void NextAttackMotion()
     {
         currentTime = 5;
         if (AttackMotion < attackMotionLength)
@@ -221,17 +230,6 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    //public virtual void MoveView(Vector2 dir)
-    //{
-
-    //}
-
-    public void IsLand()
-    {
-        animator.SetBool("Jump", false);
-        animator.SetFloat("VelY", 0);
-    }
-
     public void ResetAttackMotion()
     {
         AttackMotion = 0f;
@@ -241,49 +239,21 @@ public class CharacterController : MonoBehaviour
     {
         CanAttack = !CanAttack;
     }
-    
-    public virtual void AttackCheck()
+
+    protected virtual void AttackCheck()
+    {
+
+    }
+
+    public virtual void CheckBulletHit()
     {
         
     }
 
-    public void CheckBulletHit()
+    public virtual void Fire()
     {
-        Vector2 _dir = Vector2.zero;
-        if(MoveInput.y < 0)
-        {
-            _dir = new Vector2(dir, -1);
-        }
-        else if(MoveInput.y > 0)
-        {
-            _dir = new Vector2(dir, 1);
-        }
-        else
-        {
-            _dir = new Vector2(dir, 0);
-        }
-        RaycastHit2D[] hits = Physics2D.RaycastAll(characterTransform.position, _dir, 100, hitLayer);
-        int num = 0;
-        CharacterController[] hitChar = new CharacterController[hits.Length];
+        
 
-        for (int i = 0; i < hits.Length; i++)
-        {
-            if (!hits[i].transform.TryGetComponent<CharacterController>(out hitChar[num]))
-            {
-                continue;
-            }
-            num++;
-        }
-        if (num > 0)
-        {
-            hitChar[0].GetDamage(2);
-        }
-    }
-
-    public void GetDamage(float _damage)
-    {
-        HP -= _damage;
-        Debug.Log(HP);
     }
 
     public void StartAttackTimer()
@@ -300,6 +270,81 @@ public class CharacterController : MonoBehaviour
         }
         ResetAttackMotion();
     }
+    #endregion
+
+    #region Jump
+    public virtual void StartJump()
+    {
+        if (Animator.GetBool(jumpHash))
+        {
+            return;
+        }
+        RigidBody.AddForceY(jumpForce, ForceMode2D.Impulse);
+    }
+
+    public virtual void Jump()
+    {
+        Animator.SetFloat(velYHash, RigidBody.linearVelocityY);
+    }
+
+    public void IsLand()
+    {
+        Animator.SetBool(jumpHash, false);
+        Animator.SetFloat(velYHash, 0);
+    }
+
+    
+
+    #endregion
+
+    #region Crouch
+
+    public void StartCrouch()
+    {
+        Animator.SetBool(crouchHash, true);
+        Collider.size = CrouchSize;
+        Collider.offset = CrouchOffset;
+    }
+
+    public void EndCrouch()
+    {
+        Animator.SetBool(crouchHash, false);
+        Collider.size = StandSize;
+        Collider.offset = StandOffset;
+    }
+
+    #endregion
+
+    #region Damage
+    public void GetDamage(float _damage)
+    {
+        HP -= _damage;
+        Debug.Log(HP);
+    }
+
+    #endregion
+
+
+    
+
+    
+
+   
+
+    
+
+    //public virtual void MoveView(Vector2 dir)
+    //{
+
+    //}
+
+    
+
+    
+    
+    
+
+
     //public virtual void ResetCamera()
     //{
 

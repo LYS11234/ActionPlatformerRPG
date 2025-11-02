@@ -35,8 +35,8 @@ public class IdleState : ICharacterState
             character.ChangeState(character.JumpState);
             return;
         }
-        //character.MoveView(character.GetMoveInput());
-        if (Mathf.Abs(character.GetMoveInput().x) > 0.1f)
+        //character.MoveView(character.MoveInput);
+        if (Mathf.Abs(character.MoveInput.x) > 0.1f)
         {
             character.ChangeState(character.MoveState);
             
@@ -47,7 +47,7 @@ public class IdleState : ICharacterState
             character.ChangeState(character.ShootState);
         }
         //character.ResetCamera();
-        character.GetAnimator().SetFloat("Move", 0);
+        character.ResetMove();
     }
 
     public void Exit(CharacterController character)
@@ -81,37 +81,28 @@ public class MoveState : ICharacterState
             character.ChangeState(character.JumpState);
             return;
         }
-        if (Mathf.Abs(character.GetMoveInput().x) < 0.1f)
+        if (Mathf.Abs(character.MoveInput.x) < 0.1f)
         {
             character.ChangeState(character.IdleState);
             return;
         }
-        if (character.IsRunning())
+        if (character.IsSprinting)
         {
             character.IsRun();
-            character.GetAnimator().SetFloat("Move", 2);
         }
         else
         {
             character.IsWalk();
-            character.GetAnimator().SetFloat("Move", 1);
         }
 
-        if(character.GetMoveInput().x < 0)
-        {
-            character.GetSpriteRenderer().flipX = true;
-        }
-        else if(character.GetMoveInput().x > 0)
-        {
-            character.GetSpriteRenderer().flipX = false;
-        }
+        character.CheckDir();
 
         character.Move();
     }
 
     public void Exit(CharacterController character)
     {
-        character.GetAnimator().SetFloat("Move", 0);
+        character.ResetMove();
     }
 }
 
@@ -120,18 +111,14 @@ public class JumpState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-        character.Jump();
-        character.GetAnimator().SetBool("Jump", true);
-        int num = Random.Range(0, character.JumpSounds.Length);
-        character.Source.clip = character.JumpSounds[num];
-        character.Source.Play();
+        character.StartJump();
     }
 
     public void Execute(CharacterController character)
     {
         character.CheckTick();
-        character.GetAnimator().SetFloat("VelY", character.GetRigidBody().linearVelocityY);
-        if(!character.GetAnimator().GetBool("Jump"))
+        character.Jump();
+        if (!character.IsJump)
         {
             character.ChangeState(character.IdleState);
         }
@@ -165,9 +152,7 @@ public class CrouchState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-        character.GetAnimator().SetBool("Crouch", true);
-        character.GetCollider().size = character.CrouchSize;
-        character.GetCollider().offset = character.CrouchOffset;
+        character.StartCrouch();
     }
 
     public void Execute(CharacterController character)
@@ -182,9 +167,7 @@ public class CrouchState : ICharacterState
 
     public void Exit(CharacterController character)
     {
-        character.GetAnimator().SetBool("Crouch", false);
-        character.GetCollider().size = character.StandSize;
-        character.GetCollider().offset = character.StandOffset;
+        character.EndCrouch();
     }
 }
 
@@ -192,13 +175,7 @@ public class AttackState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-        character.NextAttackMotion();
-        character.Source.clip = character.AttackSounds[(int)character.AttackMotion - 1];
-        character.Source.Play();
-        // 공격 함수 추가
-        character.AttackCheck();
-        character.GetAnimator().SetFloat("Attack", character.AttackMotion);
-        character.GetAnimator().SetTrigger("IsAttack");
+        character.Attack();
     }
 
     public void Execute(CharacterController character)
@@ -233,10 +210,7 @@ public class ShootState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-        character.ChangeCanAttack();
-        character.GetAnimator().SetFloat("Shoot", character.GetMoveInput().y);
-        character.GetAnimator().SetTrigger("IsShoot");
-        character.CheckBulletHit();
+        character.Fire();
         // 데미지 주는 함수 추가할 것.
     }
 

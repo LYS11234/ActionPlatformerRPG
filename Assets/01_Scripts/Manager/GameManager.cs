@@ -13,31 +13,17 @@ public class GameManager : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    public CameraManager CameraManager;
+
+    [SerializeField]
+    private CameraManager _cameraManager;
+    public CameraManager CameraManager { get { return _cameraManager; } }
     [SerializeField]
     private PlayerManager _playerManager;
 
-    public PlayerManager PlayerManager
-    {
-        get { return _playerManager; }
-    }
-    public PlayerController PlayerController;
+    public PlayerManager PlayerManager { get { return _playerManager; } }
 
     [SerializeField]
     private UIManager _uiManager;
-    public UIManager UIManager
-    {
-        get { return _uiManager; }
-    }
-   
-
-    void Start()
-    {
-        CameraManager.SetTarget(PlayerController.transform);
-        PlayerManager.SetController(PlayerController);
-        PlayerController.OnShotFired += UIManager.UpdateBullet;
-        PlayerController.StartUI(); 
-    }
-
+    public UIManager UIManager { get { return _uiManager; } }
 
 }
