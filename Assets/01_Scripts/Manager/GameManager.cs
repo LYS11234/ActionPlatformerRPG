@@ -14,16 +14,29 @@ public class GameManager : MonoBehaviour
         Destroy(gameObject);
     }
     public CameraManager CameraManager;
-    public static PlayerManager PlayerManager;
+    [SerializeField]
+    private PlayerManager _playerManager;
+
+    public PlayerManager PlayerManager
+    {
+        get { return _playerManager; }
+    }
     public PlayerController PlayerController;
 
+    [SerializeField]
+    private UIManager _uiManager;
+    public UIManager UIManager
+    {
+        get { return _uiManager; }
+    }
    
 
     void Start()
     {
         CameraManager.SetTarget(PlayerController.transform);
-        PlayerManager = GetComponentInChildren<PlayerManager>();
         PlayerManager.SetController(PlayerController);
+        PlayerController.OnShotFired += UIManager.UpdateBullet;
+        PlayerController.StartUI(); 
     }
 
 

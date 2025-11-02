@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
+﻿using UnityEngine;
 
 public interface ICharacterState
 {
@@ -19,12 +18,18 @@ public class IdleState : ICharacterState
 
     public void Execute(CharacterController character)
     {
-        if(character.IsCrouching())
+        character.CheckTick();
+        if (character.IsAttack && character.CanAttack)
+        {
+            character.ChangeCanAttack();
+            character.ChangeState(character.AttackState);
+        }
+        if (character.IsCrouching)
         {
             character.ChangeState(character.CrouchState);
             return;
         }
-        if(character.IsJumping())
+        if(character.IsJumping)
         {
             //character.ResetCamera();
             character.ChangeState(character.JumpState);
@@ -37,7 +42,7 @@ public class IdleState : ICharacterState
             
             return;
         }
-        if(character.IsShooting())
+        if(character.IsShooting)
         {
             character.ChangeState(character.ShootState);
         }
@@ -60,13 +65,18 @@ public class MoveState : ICharacterState
 
     public void Execute(CharacterController character)
     {
-        Debug.Log("d");
-        if (character.IsCrouching())
+        character.CheckTick();
+        if (character.IsAttack && character.CanAttack)
+        {
+            character.ChangeCanAttack();
+            character.ChangeState(character.AttackState);
+        }
+        if (character.IsCrouching)
         {
             character.ChangeState(character.CrouchState);
             return;
         }
-        if (character.IsJumping())
+        if (character.IsJumping)
         {
             character.ChangeState(character.JumpState);
             return;
@@ -112,11 +122,14 @@ public class JumpState : ICharacterState
     {
         character.Jump();
         character.GetAnimator().SetBool("Jump", true);
-        
+        int num = Random.Range(0, character.JumpSounds.Length);
+        character.Source.clip = character.JumpSounds[num];
+        character.Source.Play();
     }
 
     public void Execute(CharacterController character)
     {
+        character.CheckTick();
         character.GetAnimator().SetFloat("VelY", character.GetRigidBody().linearVelocityY);
         if(!character.GetAnimator().GetBool("Jump"))
         {
@@ -139,7 +152,7 @@ public class FallState : ICharacterState
 
     public void Execute(CharacterController character)
     {
-
+        character.CheckTick();
     }
 
     public void Exit(CharacterController character)
@@ -153,13 +166,14 @@ public class CrouchState : ICharacterState
     public void Enter(CharacterController character)
     {
         character.GetAnimator().SetBool("Crouch", true);
-        character.GetCollider().size = new Vector2(character.GetCollider().size.x, character.GetCollider().size.y * 0.5f);
-        character.GetCollider().offset = new Vector2(character.GetCollider().offset.x, -0.5f);
+        character.GetCollider().size = character.CrouchSize;
+        character.GetCollider().offset = character.CrouchOffset;
     }
 
     public void Execute(CharacterController character)
     {
-        if (character.IsCrouching())
+        character.CheckTick();
+        if (character.IsCrouching)
         {
             return;
         }
@@ -169,8 +183,8 @@ public class CrouchState : ICharacterState
     public void Exit(CharacterController character)
     {
         character.GetAnimator().SetBool("Crouch", false);
-        character.GetCollider().size = new Vector2(character.GetCollider().size.x, character.GetCollider().size.y * 2f);
-        character.GetCollider().offset = new Vector2(character.GetCollider().offset.x, -0.1280699f);
+        character.GetCollider().size = character.StandSize;
+        character.GetCollider().offset = character.StandOffset;
     }
 }
 
@@ -178,7 +192,13 @@ public class AttackState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-
+        character.NextAttackMotion();
+        character.Source.clip = character.AttackSounds[(int)character.AttackMotion - 1];
+        character.Source.Play();
+        // 공격 함수 추가
+        character.AttackCheck();
+        character.GetAnimator().SetFloat("Attack", character.AttackMotion);
+        character.GetAnimator().SetTrigger("IsAttack");
     }
 
     public void Execute(CharacterController character)
@@ -188,19 +208,19 @@ public class AttackState : ICharacterState
 
     public void Exit(CharacterController character)
     {
-
+        character.StartAttackTimer();
     }
 }
 public class SkillState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-
+       
     }
 
     public void Execute(CharacterController character)
     {
-
+        
     }
 
     public void Exit(CharacterController character)
@@ -213,14 +233,17 @@ public class ShootState : ICharacterState
 {
     public void Enter(CharacterController character)
     {
-
+        character.ChangeCanAttack();
+        character.GetAnimator().SetFloat("Shoot", character.GetMoveInput().y);
+        character.GetAnimator().SetTrigger("IsShoot");
+        character.CheckBulletHit();
+        // 데미지 주는 함수 추가할 것.
     }
 
     public void Execute(CharacterController character)
     {
-        character.GetAnimator().SetFloat("Shoot", character.GetMoveInput().y);
-        character.GetAnimator().SetTrigger("IsShoot");
-        character.ChangeState(character.IdleState);
+        
+        
     }
 
     public void Exit(CharacterController character)

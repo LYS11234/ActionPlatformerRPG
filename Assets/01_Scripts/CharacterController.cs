@@ -9,15 +9,36 @@ public class CharacterController : MonoBehaviour
     protected ICharacterState characterState;
     #endregion
     #region States
-    public ICharacterState IdleState { get; private set; }
-    public ICharacterState AttackState { get; private set; }
-    public ICharacterState MoveState { get; private set; }
-    public ICharacterState JumpState { get; private set; }
-    public ICharacterState FallState { get; private set; }
-    public ICharacterState CrouchState { get; private set; }
-    public ICharacterState SkillState { get; private set; }
-    public ICharacterState ShootState { get; private set; }
+    public ICharacterState IdleState { get; protected set; }
+    public ICharacterState AttackState { get; protected set; }
+    public ICharacterState MoveState { get; protected set; }
+    public ICharacterState JumpState { get; protected set; }
+    public ICharacterState FallState { get; protected set; }
+    public ICharacterState CrouchState { get; protected set; }
+    public ICharacterState SkillState { get; protected set; }
+    public ICharacterState ShootState { get; protected set; }
     #endregion
+    #region Audio
+    [Header("Audio")]
+    [SerializeField]
+    protected AudioSource source;
+    public AudioSource Source { get { return source; } }
+    #region Audio Clips
+    [SerializeField]
+    protected AudioClip[] attackSounds;
+    public AudioClip[] AttackSounds { get { return attackSounds; } }
+    [SerializeField]
+    protected AudioClip[] idleSounds;
+    public AudioClip[] IdleSounds { get { return idleSounds; } }
+    [SerializeField]
+    protected AudioClip[] emotionSounds;
+    public AudioClip[] EmotionSounds { get { return emotionSounds; } }
+    [SerializeField]
+    protected AudioClip[] jumpSounds;
+    public AudioClip[] JumpSounds { get {return jumpSounds; } }
+    #endregion Audio Clips
+    #endregion Audio
+
     #region Status
     [SerializeField]
     protected float currentMoveSpeed;
@@ -32,19 +53,35 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     protected float jumpForce;
     [SerializeField]
-    protected bool isSprinting;
+    protected int attackMotionLength;
+    public bool IsSprinting { get; protected set; }
+    public bool IsCrouching {  get; protected set; }
+    public bool IsJumping {  get; protected set; }
+    public Vector2 MoveInput { get; protected set; }
+    public int IdleMotion {  get; protected set; }
+    public float AttackMotion { get; protected set; }
+    public bool IsAttack { get; protected set; }
+    public bool CanAttack { get; protected set; }
+
+    public bool IsShooting {  get; protected set; }
+
+    public float HP { get; protected set; }
     [SerializeField]
-    protected bool isCrouching;
+    protected bool canAttack;
     [SerializeField]
-    protected bool isJumping;
-    protected Vector2 moveInput;
+    protected float currentTime = 5;
+
     [SerializeField]
-    protected int idleMotion;
+    protected float dir;
+
     [SerializeField]
-    protected float attackMotion;
+    public Vector2 CrouchSize { get; protected set; }
     [SerializeField]
-    protected int attackCount;
-    protected bool isShooting;
+    public Vector2 StandSize { get; protected set; }
+    [SerializeField]
+    public Vector2 CrouchOffset {  get; protected set; }
+    [SerializeField]
+    public Vector2 StandOffset { get; protected set; }
     #endregion
 
     #region Components
@@ -56,10 +93,17 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     protected Transform characterTransform;
     [SerializeField]
-    protected BoxCollider2D collider;
+    protected BoxCollider2D boxCollider;
+
+    [SerializeField]
+    protected Vector2[] attackSizes;
+    [SerializeField]
+    protected Vector2[] attackPoses;
+    [SerializeField]
+    protected LayerMask hitLayer;
 
     #endregion
-    
+
     protected void Awake()
     {
         IdleState = new IdleState();
@@ -72,14 +116,15 @@ public class CharacterController : MonoBehaviour
         ShootState = new ShootState();
     }
 
-    protected void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         characterTransform = GetComponent<Transform>();
-        collider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         characterState = IdleState;
+        CanAttack = true;
         characterState.Enter(this);
         IsWalk();
     }
@@ -99,17 +144,19 @@ public class CharacterController : MonoBehaviour
         return rigidBody;
     }
 
-    public float GetIdleMotion()
-    {
-        return idleMotion;
-    }
 
     protected void ChangeIdleMotion()
     {
         UnityEngine.Random.InitState(DateTime.Now.Millisecond);
-        idleMotion = UnityEngine.Random.Range(1, 101);
-        animator.SetFloat("Idle", idleMotion % 2);
+        IdleMotion = UnityEngine.Random.Range(1, 101);
+        animator.SetFloat("Idle", IdleMotion % 2);
     }
+
+    public void PlayIdleSound()
+    {
+        Source.clip = IdleSounds[(int)animator.GetFloat("Idle")];
+        Source.Play();
+    }    
     public void IsRun()
     {
         currentMoveSpeed = moveSpeed * runSpeed + (moveSpeed * additionalSpeed);
@@ -122,12 +169,12 @@ public class CharacterController : MonoBehaviour
 
     public bool IsRunning()
     {
-        return isSprinting;
+        return IsSprinting;
     }
 
     public Vector2 GetMoveInput()
     {
-        return moveInput;
+        return MoveInput;
     }
 
     public SpriteRenderer GetSpriteRenderer()
@@ -137,12 +184,7 @@ public class CharacterController : MonoBehaviour
 
     public BoxCollider2D GetCollider()
     {
-        return collider;
-    }
-
-    public bool IsJumping()
-    {
-        return isJumping;
+        return boxCollider;
     }
 
     public void ChangeState(ICharacterState _state)
@@ -155,7 +197,7 @@ public class CharacterController : MonoBehaviour
 
     public void Move()
     {
-        rigidBody.linearVelocityX = moveInput.x * currentMoveSpeed;
+        rigidBody.linearVelocityX = MoveInput.x * currentMoveSpeed;
     }
 
     public void Jump()
@@ -164,7 +206,19 @@ public class CharacterController : MonoBehaviour
         {
             return;
         }
-        rigidBody.AddForceY(jumpForce);
+        rigidBody.AddForceY(jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void NextAttackMotion()
+    {
+        currentTime = 5;
+        if (AttackMotion < attackMotionLength)
+        {
+            AttackMotion++;
+            return;
+        }
+        AttackMotion = 1;
+
     }
 
     //public virtual void MoveView(Vector2 dir)
@@ -178,27 +232,76 @@ public class CharacterController : MonoBehaviour
         animator.SetFloat("VelY", 0);
     }
 
-    public bool IsCrouching()
-    {
-        return isCrouching;
-    }
-
-    public float GetAttackMotion()
-    {
-        return attackMotion;
-    }
-
     public void ResetAttackMotion()
     {
-        attackMotion = 0f;
+        AttackMotion = 0f;
     }
 
+    public void ChangeCanAttack()
+    {
+        CanAttack = !CanAttack;
+    }
+    
+    public virtual void AttackCheck()
+    {
+        
+    }
+
+    public void CheckBulletHit()
+    {
+        Vector2 _dir = Vector2.zero;
+        if(MoveInput.y < 0)
+        {
+            _dir = new Vector2(dir, -1);
+        }
+        else if(MoveInput.y > 0)
+        {
+            _dir = new Vector2(dir, 1);
+        }
+        else
+        {
+            _dir = new Vector2(dir, 0);
+        }
+        RaycastHit2D[] hits = Physics2D.RaycastAll(characterTransform.position, _dir, 100, hitLayer);
+        int num = 0;
+        CharacterController[] hitChar = new CharacterController[hits.Length];
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (!hits[i].transform.TryGetComponent<CharacterController>(out hitChar[num]))
+            {
+                continue;
+            }
+            num++;
+        }
+        if (num > 0)
+        {
+            hitChar[0].GetDamage(2);
+        }
+    }
+
+    public void GetDamage(float _damage)
+    {
+        HP -= _damage;
+        Debug.Log(HP);
+    }
+
+    public void StartAttackTimer()
+    {
+        currentTime = 5;
+    }
+
+    public void CheckTick()
+    {
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            return;
+        }
+        ResetAttackMotion();
+    }
     //public virtual void ResetCamera()
     //{
 
     //}
-    public bool IsShooting()
-    {
-        return isShooting;
-    }
 }

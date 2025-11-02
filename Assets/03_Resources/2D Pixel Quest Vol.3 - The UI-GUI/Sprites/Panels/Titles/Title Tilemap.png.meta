@@ -152,8 +152,8 @@ TextureImporter:
         width: 78
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
@@ -174,14 +174,14 @@ TextureImporter:
         width: 78
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 317e2121e6329114cabf7f108cdc56a4
+      spriteID: fe3672e17c6fad64096ed676056f165c
       internalID: -1509497571
       vertices: []
       indices: 
@@ -196,14 +196,14 @@ TextureImporter:
         width: 78
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f27bacbefb30d447bb68664eb9ad352
+      spriteID: 1bd5fa12e921e4f42b081b5645495ac6
       internalID: 853502768
       vertices: []
       indices: 
@@ -218,14 +218,14 @@ TextureImporter:
         width: 78
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3bed73e23868842b4a04360346e44d
+      spriteID: ad07307338bda554fa12a8ab7cfa508f
       internalID: -426856790
       vertices: []
       indices: 
@@ -240,14 +240,14 @@ TextureImporter:
         width: 78
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75c4882defe0c6f428f21d21f313fdda
+      spriteID: 4aea5d2911bed144ba339fc5558289cc
       internalID: 866813256
       vertices: []
       indices: 
@@ -265,7 +265,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":5.0},"gridSpriteSize":{"x":78.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Title Tilemap_0: -361247388
       Title Tilemap_1: -1509497571

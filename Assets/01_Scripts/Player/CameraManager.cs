@@ -15,8 +15,6 @@ public class CameraManager : MonoBehaviour
     private Vector3 minBound;
     [SerializeField] 
     private Vector3 maxBound;
-    [SerializeField]
-    private Transform tf;
 
     private float halfWidth;
     private float halfHeight;
@@ -50,24 +48,24 @@ public class CameraManager : MonoBehaviour
     {
         target = _target;
         targetPosition = target.position;
-        targetPosition.z = tf.position.z;
+        targetPosition.z = transform.position.z;
     }
 
     public void SetView(Vector3 _targetPos)
     {
         targetPosition = _targetPos;
-        targetPosition.z = tf.position.z;
+        targetPosition.z = transform.position.z;
     }
 
     private void MoveCam()
     {
         targetPosition = target.position;
-        targetPosition.z = tf.position.z;
-        tf.position = Vector3.Lerp(tf.position, targetPosition, moveSpeed);
+        targetPosition.z = transform.position.z;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed);
 
-        float clampX = Mathf.Clamp(tf.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
-        float clampY = Mathf.Clamp(tf.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
+        float clampX = Mathf.Clamp(transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
+        float clampY = Mathf.Clamp(transform.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
 
-        tf.position = new Vector3(clampX, clampY, tf.position.z);
+        transform.position = new Vector3(clampX, clampY, transform.position.z);
     }
 }

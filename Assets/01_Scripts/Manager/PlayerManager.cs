@@ -25,5 +25,7 @@ public class PlayerManager : MonoBehaviour
         playerControls.PlayerActions.Crouch.canceled += controller.OnCrouch;
         playerControls.PlayerActions.Shot.performed += controller.OnShot;
         playerControls.PlayerActions.Shot.canceled += controller.OnShot;
+        playerControls.PlayerActions.Attack.performed += controller.OnAttack;
+        playerControls.PlayerActions.Attack.canceled += controller.OnAttack;
     }
 }
