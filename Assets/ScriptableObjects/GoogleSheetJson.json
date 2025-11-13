@@ -1,0 +1,46 @@
+{
+  "Misaki": [
+    {
+      "NameEN": "Misaki Fujiwara",
+      "DialogueEN": "Kohaku-Chan!",
+      "NameKR": "후지와라 미사키",
+      "DialogueKR": "코하쿠!",
+      "NameJP": "藤原みさき",
+      "DialogueJP": "大鳥ちゃん！",
+      "SpriteL": "",
+      "SpriteR": "",
+      "ConditionName": "",
+      "Condition": "",
+      "Voice": "",
+      "Sound": ""
+    },
+    {
+      "NameEN": "Kohaku Otori",
+      "DialogueEN": "Misaki Chan?",
+      "NameKR": "오오토리 코하쿠",
+      "DialogueKR": "미사키?",
+      "NameJP": "大鳥こはく",
+      "DialogueJP": "藤原ちゃん？",
+      "SpriteL": "",
+      "SpriteR": "",
+      "ConditionName": "",
+      "Condition": "",
+      "Voice": "",
+      "Sound": ""
+    },
+    {
+      "NameEN": "Misaki Fujiwara",
+      "DialogueEN": "You are here!",
+      "NameKR": "후지와라 미사키",
+      "DialogueKR": "너 여기있었구나!",
+      "NameJP": "藤原みさき",
+      "DialogueJP": "ここにいたのか！",
+      "SpriteL": "",
+      "SpriteR": "",
+      "ConditionName": "",
+      "Condition": "",
+      "Voice": "",
+      "Sound": ""
+    }
+  ]
+}

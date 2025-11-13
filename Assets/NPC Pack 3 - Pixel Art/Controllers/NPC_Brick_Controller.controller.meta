@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 15a75dd58d33d6b44816c283ca00d3ad
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 239864
+  packageName: NPC Pack 3 - Pixel Art
+  packageVersion: 1.0
+  assetPath: Assets/NPC Pack 3 - Pixel Art/Controllers/NPC_Brick_Controller.controller
+  uploadId: 628664

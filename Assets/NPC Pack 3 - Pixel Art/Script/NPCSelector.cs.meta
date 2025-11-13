@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7ef9e7757305b6d47a403eb2d7184a82
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 239864
+  packageName: NPC Pack 3 - Pixel Art
+  packageVersion: 1.0
+  assetPath: Assets/NPC Pack 3 - Pixel Art/Script/NPCSelector.cs
+  uploadId: 628664

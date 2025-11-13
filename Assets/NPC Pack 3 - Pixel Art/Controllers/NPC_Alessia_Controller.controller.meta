@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ed07c514f70a23b49aeea12f79e0b852
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 239864
+  packageName: NPC Pack 3 - Pixel Art
+  packageVersion: 1.0
+  assetPath: Assets/NPC Pack 3 - Pixel Art/Controllers/NPC_Alessia_Controller.controller
+  uploadId: 628664

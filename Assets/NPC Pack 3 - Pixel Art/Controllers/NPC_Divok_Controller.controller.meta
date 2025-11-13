@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60d661f0deb80c14389da644821678ae
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 239864
+  packageName: NPC Pack 3 - Pixel Art
+  packageVersion: 1.0
+  assetPath: Assets/NPC Pack 3 - Pixel Art/Controllers/NPC_Divok_Controller.controller
+  uploadId: 628664

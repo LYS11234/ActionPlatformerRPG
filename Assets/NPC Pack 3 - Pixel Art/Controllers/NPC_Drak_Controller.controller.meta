@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 90f294ecb6c62a942bb414a91737ed7e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 239864
+  packageName: NPC Pack 3 - Pixel Art
+  packageVersion: 1.0
+  assetPath: Assets/NPC Pack 3 - Pixel Art/Controllers/NPC_Drak_Controller.controller
+  uploadId: 628664

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3c8cdf42d30e9454a86995bff30d3958
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 239864
+  packageName: NPC Pack 3 - Pixel Art
+  packageVersion: 1.0
+  assetPath: Assets/NPC Pack 3 - Pixel Art/Controllers/NPC_Albert_Controller.controller
+  uploadId: 628664

@@ -12,7 +12,11 @@ public class PlayerController : CharacterController
     #endregion
     [SerializeField]
     private int bulletCount;
+    #region Update UI
     public event Action<int> OnShotFired;
+    public event Action<float, float> UpdateHP;
+    public event Action<float, float> UpdateMP;
+    #endregion
     private Vector2 gunDirection = Vector2.zero;
     
 
@@ -25,6 +29,10 @@ public class PlayerController : CharacterController
     protected override void Start()
     {
         base.Start();
+        MaxHP = 120;
+        CurrentHP = MaxHP - 30; //HP 하드코딩은 테스트 용.
+        MaxMP = 50;
+        CurrentMP = MaxMP - 20;
         StandOffset = new Vector2(collider.offset.x, collider.offset.y);
         StandSize = new Vector2(collider.size.x, collider.size.y);
         CrouchOffset = new Vector2(collider.offset.x, -0.5f);
@@ -35,6 +43,8 @@ public class PlayerController : CharacterController
     public void StartUI()
     {
         OnShotFired?.Invoke(bulletCount);
+        UpdateHP?.Invoke(MaxHP, CurrentHP);
+        UpdateMP?.Invoke(MaxMP, CurrentMP);
     }
     protected override void FixedUpdate()
     {

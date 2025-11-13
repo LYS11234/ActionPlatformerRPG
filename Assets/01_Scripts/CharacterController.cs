@@ -64,7 +64,10 @@ public class CharacterController : MonoBehaviour
 
     public bool IsShooting {  get; protected set; }
 
-    public float HP { get; protected set; }
+    public float MaxHP { get; protected set; }
+    public float CurrentHP {  get; protected set; }
+    public float MaxMP {  get; protected set; }
+    public float CurrentMP { get; protected set; }
     [SerializeField]
     protected bool canAttack;
     [SerializeField]
@@ -318,8 +321,8 @@ public class CharacterController : MonoBehaviour
     #region Damage
     public void GetDamage(float _damage)
     {
-        HP -= _damage;
-        Debug.Log(HP);
+        CurrentHP -= _damage;
+        Debug.Log(CurrentHP);
     }
 
     #endregion

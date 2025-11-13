@@ -1,0 +1,67 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LICENSE
+
+- All packages on the Asset Store are protected by the “Asset Store End User License Agreement”.
+- If you would like to read the End User License Agreement, please go to this webpage: https://unity.com/legal/as-terms
+- Credit not necessary but appreciated, if you do you can link to my ITCH profile
+ITCH.IO LINK: https://admurin.itch.io/
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+NPCs
+
+- Albert: 4 frames, 1 animation (Idle)
+- Alessia: 4 frames, 1 animation (Idle)
+- Arbiter: 4 frames, 1 animation (Idle)
+- Armolas: 4 frames (Idle)
+- Arty: 4 frames (Idle)
+- Azazel: 10 frames, 2 animation (Idle, Spin)
+- Blues: 6 frames, 1 animation (Idle)
+- Brick: 4 frames, 1 animation (Idle)
+- Colton: 4 frames, 1 animation (Idle)
+- Commander: 4 frames, 1 animation (Idle)
+- Divok: 4 frames, 1 animation (Idle)
+- Drak: 4 frames, 1 animation (Idle)
+- Ezekiel: 4 frames, 1 animation (Idle)
+- Frog Defeated: 4 frames, 1 animation (Idle)
+- Frog Monk: 8 frames, 1 animation (Idle)
+- Frog Scout: 4 frames, 1 animation (Idle)
+- Jan: 8 frames, 1 animation (Idle)
+- Joan: 4 frames, 1 animation (Idle)
+- Lonkhor: 4 frames, 1 animation (Idle)
+- Menes: 4 frames, 1 animation (Idle)
+- Nicholas: 4 frames, 1 animation (Idle)
+- Rose: 6 frames, 1 animation (Idle)
+- Soldier 1: 4 frames, 1 animation (Idle)
+- Soldier 2: 4 frames, 1 animation (Idle)
+- Soldier 3: 4 frames, 1 animation (Idle)
+- Time Keeper: 4 frames, 1 animation (Idle)
+- Vorkath: 4 frames, 1 animation (Idle)
+- Yin: 4 frames, 1 animation (Idle)
+- Zen: 4 frames, 1 animation (Idle)
+- Zlayer: 4 frames, 1 animation (Idle)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+All NPCs come with an Idle animation that is loopable
+
+Certain NPCs have more animations
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+If you are looking for even more content then check out all my packs!
+Admurin's Library: https://assetstore.unity.com/publishers/51994
+
+If you have any other questions you can check my discord where I will answer and help you use my assets. 
+DISCORD LINK: https://discord.com/invite/jmf4pzv5Fj
+
+If you want to support me you can check out my Patreon. This allows me to focus on making more assets and releasing free assets as well!
+PATREON LINK: https://www.patreon.com/admurin
+
+
+Don't forget to leave a review!
+
+Thank you.
+Admurin
