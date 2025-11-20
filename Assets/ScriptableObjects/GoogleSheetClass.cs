@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoogleSheetSO : ScriptableObject
+public class GoogleSheetsSO : ScriptableObject
 {
 	public List<Misaki> MisakiList;
 }

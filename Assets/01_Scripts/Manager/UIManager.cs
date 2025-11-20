@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System.Collections;
+using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +28,11 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private TMP_Text bulletText;
     #endregion
+
+    private Coroutine hpCoroutine;
+
+    private float hpCurrentTime;
+
     public void UpdateBullet(int _currentBullets)
     {
         bulletText.SetText("× {0:00}", _currentBullets);
@@ -35,7 +42,25 @@ public class UIManager : MonoBehaviour
     public void UpdateHP(float _maxHP, float _currentHP)
     {
         hpText.SetText("{0:0}/{1:0}", _currentHP, _maxHP);
-        hpSlider.value = (_currentHP / _maxHP);
+        if (hpCoroutine != null)
+        {
+            StopCoroutine(hpCoroutine);
+        }
+        hpCoroutine = StartCoroutine(HPAnimation(_currentHP/_maxHP));
+    }
+
+    private IEnumerator HPAnimation(float currentHPRatio)
+    {
+        float value = hpSlider.value;
+        hpCurrentTime = 0f;
+        while (hpCurrentTime < 1f)
+        {
+            
+            hpSlider.value = Mathf.Lerp(value, currentHPRatio, hpCurrentTime);
+            hpCurrentTime += Time.deltaTime;
+            yield return null;
+        }
+        hpSlider.value = currentHPRatio;
     }
     #endregion
 

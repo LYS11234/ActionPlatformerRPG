@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharacterController : MonoBehaviour
 {
@@ -64,14 +65,12 @@ public class CharacterController : MonoBehaviour
 
     public bool IsShooting {  get; protected set; }
 
-    public float MaxHP { get; protected set; }
-    public float CurrentHP {  get; protected set; }
-    public float MaxMP {  get; protected set; }
-    public float CurrentMP { get; protected set; }
     [SerializeField]
     protected bool canAttack;
     [SerializeField]
     protected float currentTime = 5;
+
+    public Parameters Parameters { get; private set; }
 
     [SerializeField]
     protected float dir;
@@ -134,6 +133,7 @@ public class CharacterController : MonoBehaviour
 
     protected virtual void Start()
     {
+        Parameters = new Parameters();  
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -169,6 +169,30 @@ public class CharacterController : MonoBehaviour
 
         characterState = _state;
         characterState.Enter(this);
+    }
+
+    public void CheckState()
+    {
+        if (RigidBody.linearVelocityY < 0)
+        {
+            ChangeState(FallState);
+        }
+        if (IsAttack && CanAttack)
+        {
+            ChangeCanAttack();
+            ChangeState(AttackState);
+        }
+        if (IsCrouching)
+        {
+            ChangeState(CrouchState);
+            return;
+        }
+        if (IsJumping)
+        {
+            //character.ResetCamera();
+            ChangeState(JumpState);
+            return;
+        }
     }
 
     #endregion
@@ -243,11 +267,6 @@ public class CharacterController : MonoBehaviour
         CanAttack = !CanAttack;
     }
 
-    protected virtual void AttackCheck()
-    {
-
-    }
-
     public virtual void CheckBulletHit()
     {
         
@@ -259,20 +278,8 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    public void StartAttackTimer()
-    {
-        currentTime = 5;
-    }
 
-    public void CheckTick()
-    {
-        if (currentTime > 0)
-        {
-            currentTime -= Time.deltaTime;
-            return;
-        }
-        ResetAttackMotion();
-    }
+    
     #endregion
 
     #region Jump
@@ -286,6 +293,15 @@ public class CharacterController : MonoBehaviour
     }
 
     public virtual void Jump()
+    {
+        CheckLinearVelY();
+        if (RigidBody.linearVelocityY < 0)
+        {
+            ChangeState(FallState);
+        }
+    }
+
+    public void CheckLinearVelY()
     {
         Animator.SetFloat(velYHash, RigidBody.linearVelocityY);
     }
@@ -321,8 +337,8 @@ public class CharacterController : MonoBehaviour
     #region Damage
     public void GetDamage(float _damage)
     {
-        CurrentHP -= _damage;
-        Debug.Log(CurrentHP);
+        Parameters.UpdateCurrentHP(-_damage);
+        Debug.Log(Parameters.CurrentHP);
     }
 
     #endregion
