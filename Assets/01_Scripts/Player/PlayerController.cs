@@ -1,45 +1,79 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    #region Interface
+    #region Components
+    [Header("Components")]
+    [field: SerializeField]
+    protected SpriteRenderer spriteRenderer;
+    [field: SerializeField]
+    public Transform PlayerTransform { get; private set; }
+    [field: SerializeField]
+    public Rigidbody2D RigidBody { get; private set; }
+    [field: SerializeField]
+    public Animator Animator { get; private set; }
+    [field: SerializeField]
+    public BoxCollider2D Collider { get; private set; }
     [SerializeField]
-    protected ICharacterState characterState;
-#endregion
-    #region States
-    public ICharacterState IdleState { get; protected set; }
-    public ICharacterState AttackState { get; protected set; }
-    public ICharacterState MoveState { get; protected set; }
-    public ICharacterState JumpState { get; protected set; }
-    public ICharacterState FallState { get; protected set; }
-    public ICharacterState CrouchState { get; protected set; }
-    public ICharacterState SkillState { get; protected set; }
-    public ICharacterState ShootState { get; protected set; }
+    private CameraManager playerCam;
     #endregion
     #region Audio
     [Header("Audio")]
-    [SerializeField]
-    protected AudioSource source;
-    public AudioSource Source { get { return source; } }
+    [field: SerializeField]
+    private AudioSource source;
     #region Audio Clips
+    [field:SerializeField]
+    public AudioClip[] AttackSounds { get; private set; }
+    [field:SerializeField]
+    public AudioClip[] IdleSounds { get; private set; }
     [SerializeField]
-    protected AudioClip[] attackSounds;
-    public AudioClip[] AttackSounds { get { return attackSounds; } }
-    [SerializeField]
-    protected AudioClip[] idleSounds;
-    public AudioClip[] IdleSounds { get { return idleSounds; } }
-    [SerializeField]
-    protected AudioClip[] emotionSounds;
-    public AudioClip[] EmotionSounds { get { return emotionSounds; } }
-    [SerializeField]
-    protected AudioClip[] jumpSounds;
-    public AudioClip[] JumpSounds { get { return jumpSounds; } }
+    public AudioClip[] EmotionSounds { get; private set; }
+    [field:SerializeField]
+    public AudioClip[] jumpSounds { get; private set; }
     #endregion Audio Clips
     #endregion Audio
-    [Space(30)]
+    [field:Space(10)]
+    [field:Header("Status")]
+    [field: SerializeField]
+    public MoveElements MoveElements { get; private set; }
+    [field: SerializeField]
+    public AttackElements AttackElements { get; private set; }
+    
+    public Parameters Parameters { get; private set; }
+    [field: Space(10)]
+    // 인스펙터에서 할당하는 것을 더 선호.
+    #region States
+    private IPlayerState currentState;
+    public IPlayerState IdleState { get; protected set; }
+    public IPlayerState AttackState { get; protected set; }
+    public IPlayerState MoveState { get; protected set; }
+    public IPlayerState JumpState { get; protected set; }
+    public IPlayerState FallState { get; protected set; }
+    public IPlayerState CrouchState { get; protected set; }
+    public IPlayerState SkillState { get; protected set; }
+    public IPlayerState ShootState { get; protected set; }
+    #endregion
+
+    public Collider2D[] OverlapHits = new Collider2D[byte.MaxValue];
+    public RaycastHit2D[] RayHits = new RaycastHit2D[byte.MaxValue];
+    public List<BoxCollider2D> HitList;
+    public Vector2 GunDirection = Vector2.zero;
+    [SerializeField]
+    protected bool canAttack;
+    [SerializeField]
+    public float CurrentTime = 5;
+    public float AttackMotion;
+    [SerializeField]
+    private int bulletCount;
+    
+
+    [SerializeField]
+    public float Dir {  get; private set; }
+
     #region Status
     [SerializeField]
     protected float attackSpeed;
@@ -48,107 +82,66 @@ public class PlayerController : MonoBehaviour
     public bool IsJumping { get; protected set; }
     public Vector2 MoveInput { get; protected set; }
     public int IdleMotion { get; protected set; }
-    public float AttackMotion { get; protected set; }
     public bool IsAttack { get; protected set; }
     public bool CanAttack { get; protected set; }
 
     public bool IsShooting { get; protected set; }
-
-    [SerializeField]
-    protected bool canAttack;
-    [SerializeField]
-    protected float currentTime = 5;
-
-
-
-    [SerializeField]
-    protected float dir;
-
-    public Vector2 CrouchSize { get; protected set; }
-    public Vector2 StandSize { get; protected set; }
-    public Vector2 CrouchOffset { get; protected set; }
-    public Vector2 StandOffset { get; protected set; }
     #endregion
-
     #region State Hashes
-
-    protected int idleHash = Animator.StringToHash("Idle");
-    protected int motionsHash = Animator.StringToHash("Motions");
-
+    public readonly int IdleHash = Animator.StringToHash("Idle");
+    public readonly int MotionsHash = Animator.StringToHash("Motions");
+    public readonly int MoveHash = Animator.StringToHash("Move");
+    public readonly int VelYHash = Animator.StringToHash("VelY");
+    public readonly int JumpHash = Animator.StringToHash("Jump");
+    public readonly int CrouchHash = Animator.StringToHash("Crouch");
+    public readonly int AttackHash = Animator.StringToHash("Attack");
+    public readonly int IsAttackHash = Animator.StringToHash("IsAttack");
+    public readonly int ShootHash = Animator.StringToHash("Shoot");
+    public readonly int IsShootHash = Animator.StringToHash("IsShoot");
     #endregion
 
-    #region Components
-    protected SpriteRenderer spriteRenderer;
-    [SerializeField]
-    protected Rigidbody2D rigidBody;
-    public Rigidbody2D RigidBody { get { return rigidBody; } }
-    [SerializeField]
-    protected Animator animator;
-    public Animator Animator { get { return animator; } }
-    [SerializeField]
-    protected Transform characterTransform;
-    [SerializeField]
-    protected BoxCollider2D collider;
-    public BoxCollider2D Collider { get { return collider; } }
-    [SerializeField]
-    private MoveElements moveElements;
-    [SerializeField]
-    private AttackElements attackElements;
-    #endregion
-    #region Player Components
-    [SerializeField]
-    protected CameraManager playerCam;
-    #endregion
-    [SerializeField]
-    private int bulletCount;
+
+
+    
+    public bool IsJump { get { return Animator.GetBool(JumpHash); } }
     #region Update UI
     public event Action<int> OnShotFired;
     public event Action<float, float> UpdateHP;
     public event Action<float, float> UpdateMP;
     #endregion
-
+    #region Take Damage or Give Damage
+    public Action<BoxCollider2D, float> Attack;
+    #endregion
     #region Player Classes
-    public PlayerMoveController MoveController { get; private set; }
-    public PlayerActionController ActionController { get; private set; }
-    public Parameters Parameters { get; private set; }
+    
 
     #endregion
 
     protected void Awake()
     {
-        IdleState = new IdleState();
-        AttackState = new AttackState();
-        MoveState = new MoveState();
-        JumpState = new JumpState();
-        FallState = new FallState();
-        CrouchState = new CrouchState();
-        SkillState = new SkillState();
+        IdleState = new PlayerIdleState();
+        AttackState = new PlayerAttackState();
+        MoveState = new PlayerMoveState();
+        JumpState = new PlayerJumpState();
+        FallState = new PlayerFallState();
+        CrouchState = new PlayerCrouchState();
+        SkillState = new PlayerSkillState();
         ShootState = new ShootState();
     }
 
     protected void Start()
     {
-        animator = GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        characterTransform = GetComponent<Transform>();
-        collider = GetComponent<BoxCollider2D>();
-        characterState = IdleState;
-        CanAttack = true;
-        
-        Parameters = new Parameters();
-        MoveController = new PlayerMoveController();
-        ActionController = new PlayerActionController();
-        Init();
-        StartUI();
-        characterState.Enter(this);
-        IsWalk();
-    }
+        //인스펙터로 집어넣자
 
-    private void Init()
-    {
-        ActionController.Init(transform, animator, currentTime, attackElements);
-        MoveController.Init(spriteRenderer, animator, rigidBody, collider, ChangeState, FallState, IdleState, moveElements);
+        currentState = IdleState;
+        CanAttack = true;
+        MoveElements.StandOffset = new Vector2(Collider.offset.x, Collider.offset.y);
+        MoveElements.StandSize = new Vector2(Collider.size.x, Collider.size.y);
+        MoveElements.CrouchOffset = new Vector2(Collider.offset.x, -0.55f);
+        MoveElements.CrouchSize = new Vector2(Collider.size.x, MoveElements.StandSize.y * 0.5f);
+        Parameters = new Parameters();
+        StartUI();
+        currentState.Enter(this);
     }
 
     public void StartUI()
@@ -160,14 +153,14 @@ public class PlayerController : MonoBehaviour
     }
     protected void FixedUpdate()
     {
-        characterState.Execute(this);
+        currentState.Execute(this);
 
     }
 
-    //public override void MoveView(Vector2 dir)
+    //public override void MoveView(Vector2 Dir)
     //{
-    //    base.MoveView(dir);
-    //    playerCam.SetView(new Vector3(characterTransform.position.x, characterTransform.position.y + 3 * dir.y, characterTransform.position.z));
+    //    base.MoveView(Dir);
+    //    playerCam.SetView(new Vector3(characterTransform.position.x, characterTransform.position.y + 3 * Dir.y, characterTransform.position.z));
     //}
 
     //public override void ResetCamera()
@@ -181,12 +174,12 @@ public class PlayerController : MonoBehaviour
         MoveInput = context.ReadValue<Vector2>();
         if (MoveInput.x < 0)
         {
-            dir = -1;
+            Dir = -1;
             return;
         }
         else if (MoveInput.x > 0)
         {
-            dir = 1;
+            Dir = 1;
             return;
         }
     }
@@ -241,146 +234,113 @@ public class PlayerController : MonoBehaviour
     #region Common
     public void CheckDir()
     {
-        MoveController.CheckDir(MoveInput);
+        if (MoveInput.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (MoveInput.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
-    public void ChangeState(ICharacterState _state)
+    public void ChangeState(IPlayerState _state)
     {
-        characterState?.Exit(this);
+        currentState?.Exit(this);
 
-        characterState = _state;
-        characterState.Enter(this);
+        currentState = _state;
+        currentState.Enter(this);
     }
 
-    public void CheckState()
+    public bool CheckState()
     {
-        if (RigidBody.linearVelocityY < 0)
+        if (RigidBody.linearVelocityY < -0.1f)
         {
             ChangeState(FallState);
+            return true;
         }
-        if (IsAttack && ActionController.CanAttack)
+        if (IsAttack && CanAttack)
         {
             ChangeCanAttack();
             ChangeState(AttackState);
+            return true;
         }
         if (IsCrouching)
         {
             ChangeState(CrouchState);
-            return;
+            return true;
         }
         if (IsJumping)
         {
             //character.ResetCamera();
             ChangeState(JumpState);
-            return;
+            return true;
         }
+        return false;
     }
 
     #endregion
+
+    public void PlaySound(AudioClip _audioClip)
+    {
+        source.clip = _audioClip;
+        source.Play();
+    }
+
     #region Idle
     protected void ChangeIdleMotion()
     {
         UnityEngine.Random.InitState(DateTime.Now.Millisecond);
         IdleMotion = UnityEngine.Random.Range(1, 101);
-        Animator.SetFloat(idleHash, IdleMotion % 2);
+        Animator.SetFloat(IdleHash, IdleMotion % 2);
     }
 
     public void PlayIdleSound()
     {
-        Source.clip = IdleSounds[(int)Animator.GetFloat(idleHash)];
-        Source.Play();
+        source.clip = IdleSounds[(int)Animator.GetFloat(IdleHash)];
+        source.Play();
     }
-    #endregion
-    #region Move
-    public void IsRun()
-    {
-        MoveController.IsRun();
-    }
-
-    public void IsWalk()
-    {
-        MoveController.IsWalk();
-    }
-
-    public void ResetMove()
-    {
-        MoveController.ResetMove();
-    }
-    public void Move()
-    {
-        MoveController.Move(MoveInput);
-    }
-
     #endregion
     #region Attack
 
-    public void Attack()
-    {
-        ActionController.Attack(dir);
-        Source.clip = AttackSounds[(int)ActionController.AttackMotion - 1];
-        Source.Play();
-    }
 
     public void CheckTick()
     {
-        ActionController.CheckComboTime();
+        if (CurrentTime <= 0)
+        {
+            AttackMotion = 0f;
+            return;
+        }
+        CurrentTime -= Time.deltaTime;
     }
     public void ChangeCanAttack()
     {
-        ActionController.ChangeCanAttack();
+        CanAttack = !CanAttack;
     }
 
     
 
-    public void Fire()
-    {
-        ActionController.Fire(dir, MoveInput);
-    }
 
     #endregion
 
     #region Jump
     public void StartJump()
     {
-        if (MoveController.IsJump)
+        if (IsJump)
         {
             return;
         }
-        MoveController.StartJump(); 
-        int num = UnityEngine.Random.Range(0, JumpSounds.Length);
-        Source.clip = JumpSounds[num];
-        Source.Play();
-    }
-
-    public void Jump()
-    {
-        MoveController.Jump();
-    }
-
-    public void Fall()
-    {
-        MoveController.Fall();
+        int num = UnityEngine.Random.Range(0, jumpSounds.Length);
+        source.clip = jumpSounds[num];
+        source.Play();
     }
 
     public void IsLand()
     {
-        MoveController.IsLand();
+        Animator.SetBool(JumpHash, false);
+        Animator.SetFloat(VelYHash, 0);
     }
     #endregion
-    #region Crouch
-
-    public void StartCrouch()
-    {
-        MoveController.StartCrouch();
-    }
-
-    public void EndCrouch()
-    {
-        MoveController.EndCrouch();
-    }
-
-    #endregion
-
     #region Damage
     public void GetDamage(float _damage)
     {

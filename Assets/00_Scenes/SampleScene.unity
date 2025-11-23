@@ -1248,41 +1248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36930b318cf6fe540ad8f55a0bdaa977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
-  source: {fileID: 0}
-  attackSounds: []
-  idleSounds: []
-  emotionSounds: []
-  jumpSounds: []
-  currentMoveSpeed: 0
-  moveSpeed: 0
-  runSpeed: 0
-  additionalSpeed: 0
-  attackSpeed: 0
-  jumpForce: 0
-  attackMotionLength: 0
-  canAttack: 0
-  currentTime: 5
-  dir: 0
-  rigidBody: {fileID: 0}
-  animator: {fileID: 0}
-  characterTransform: {fileID: 0}
-  collider: {fileID: 0}
-  attackSizes: []
-  attackPoses: []
-  contactFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!1 &402680658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,11 +2577,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1402756995}
+  - component: {fileID: 1402756997}
   - component: {fileID: 1402756994}
   - component: {fileID: 1402756993}
   - component: {fileID: 1402756992}
   - component: {fileID: 1402756996}
-  - component: {fileID: 1402756997}
   - component: {fileID: 1402756998}
   m_Layer: 6
   m_Name: Unitychan
@@ -2805,27 +2770,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d64a59cd4a2db44814a088ecbe7f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  spriteRenderer: {fileID: 1402756994}
+  <PlayerTransform>k__BackingField: {fileID: 1402756995}
+  <RigidBody>k__BackingField: {fileID: 1402756993}
+  <Animator>k__BackingField: {fileID: 1402756996}
+  <Collider>k__BackingField: {fileID: 1402756992}
+  playerCam: {fileID: 519420033}
   source: {fileID: 1402756998}
-  attackSounds:
+  <AttackSounds>k__BackingField:
   - {fileID: 8300000, guid: a865eb1a54eabcf4698780d716f88c57, type: 3}
   - {fileID: 8300000, guid: c0de367b4a85168459c6d5e9c262c0eb, type: 3}
   - {fileID: 8300000, guid: b8d13d4b8521eac4f8a546ac12902356, type: 3}
-  idleSounds:
+  <IdleSounds>k__BackingField:
   - {fileID: 8300000, guid: dc79585535f13a54ea679d1c3145b29f, type: 3}
   - {fileID: 8300000, guid: 3722a6301c602bd40a8063e3eb33c594, type: 3}
-  emotionSounds: []
-  jumpSounds:
+  <jumpSounds>k__BackingField:
   - {fileID: 8300000, guid: 18f3f61f4311c2c4f81497510d3bd5a0, type: 3}
   - {fileID: 8300000, guid: 15d9eebd12430a747ae932c4d3bf18c5, type: 3}
-  attackSpeed: 0
-  canAttack: 1
-  currentTime: 5
-  dir: 0
-  rigidBody: {fileID: 0}
-  animator: {fileID: 0}
-  characterTransform: {fileID: 0}
-  collider: {fileID: 0}
-  moveElements:
+  <MoveElements>k__BackingField:
     CurrentMoveSpeed: 0
     MoveSpeed: 4
     RunSpeed: 1.8
@@ -2835,15 +2797,15 @@ MonoBehaviour:
     CrouchOffset: {x: 0, y: 0}
     StandSize: {x: 0, y: 0}
     StandOffset: {x: 0, y: 0}
-  attackElements:
+  <AttackElements>k__BackingField:
     AttackSizes:
     - {x: 1, y: 1}
-    - {x: 1.2, y: 2}
-    - {x: 2.5, y: 2}
+    - {x: 1.5, y: 1}
+    - {x: 2, y: 2}
     AttackPoses:
     - {x: 1, y: 0}
-    - {x: 1.1, y: 1}
-    - {x: 2.5, y: 1}
+    - {x: 1.5, y: 0}
+    - {x: 2, y: 1}
     AttackMotionLength: 3
     ContactFilter:
       useTriggers: 0
@@ -2859,8 +2821,269 @@ MonoBehaviour:
       maxDepth: 0
       minNormalAngle: 0
       maxNormalAngle: 0
-  playerCam: {fileID: 519420033}
+    ATK: 0
+  OverlapHits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  HitList: []
+  canAttack: 1
+  CurrentTime: 5
+  AttackMotion: 0
   bulletCount: 5
+  attackSpeed: 0
 --- !u!82 &1402756998
 AudioSource:
   m_ObjectHideFlags: 0
