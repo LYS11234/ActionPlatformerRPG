@@ -23,6 +23,7 @@ public class GoogleSpreadSheetManager : MonoBehaviour
     private string generateFolderPath;
     [Tooltip("외부에서 접근할 수 있는 Scriptable Object입니다.")]
     public ScriptableObject Scriptable { get; private set; }
+    public GoogleSheetSO GoogleSheetSO { get; private set; }
     public T SO<T>() where T : ScriptableObject
     {
         if(Scriptable == null)
@@ -46,7 +47,7 @@ public class GoogleSpreadSheetManager : MonoBehaviour
         {
 
         }
-        if (json != null)
+        if (string.IsNullOrEmpty(json))
         {
             return;
         }
@@ -104,6 +105,7 @@ public class GoogleSpreadSheetManager : MonoBehaviour
         }
         JObject jsonObject = JObject.Parse(json);
         
+        
         try
         {
             foreach (var jObject in jsonObject)
@@ -114,7 +116,8 @@ public class GoogleSpreadSheetManager : MonoBehaviour
                 {
                     case "DialogueSO":
                         {
-
+                            Dialogues dialogues = new Dialogues();
+                            
                             break;
                         }
                     default:
@@ -126,7 +129,8 @@ public class GoogleSpreadSheetManager : MonoBehaviour
         }
         catch (Exception e)
         {
-
+            Debug.LogError(e.Message);
+            // 팝업으로 띄우기
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -58,16 +59,20 @@ public class PlayerController : MonoBehaviour
     public IPlayerState ShootState { get; protected set; }
     #endregion
 
+    [HideInInspector]
     public Collider2D[] OverlapHits = new Collider2D[byte.MaxValue];
+    [HideInInspector]
     public RaycastHit2D[] RayHits = new RaycastHit2D[byte.MaxValue];
+    [HideInInspector]
     public List<BoxCollider2D> HitList;
+    [HideInInspector]
     public Vector2 GunDirection = Vector2.zero;
-    [SerializeField]
     protected bool canAttack;
-    [SerializeField]
+    [HideInInspector]
     public float CurrentTime = 5;
+    [HideInInspector]
     public float AttackMotion;
-    [SerializeField]
+    [HideInInspector]
     private int bulletCount;
     
 
@@ -75,7 +80,6 @@ public class PlayerController : MonoBehaviour
     public float Dir {  get; private set; }
 
     #region Status
-    [SerializeField]
     protected float attackSpeed;
     public bool IsSprinting { get; protected set; }
     public bool IsCrouching { get; protected set; }
@@ -349,4 +353,26 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+
+
+
+#if UNITY_EDITOR
+    #region Debug
+    private void OnDrawGizmos()
+    {
+        if (AttackElements == null || AttackElements.AttackHitBoxes == null)
+        {
+            return;
+        }
+        Gizmos.color = UnityEngine.Color.red;
+        foreach (var box in AttackElements.AttackHitBoxes)
+        {
+            Vector3 globalPos = transform.position + (Vector3)box.Offset;
+            Gizmos.DrawWireCube(globalPos, box.Size);
+        }
+    }
+    #endregion
+#endif
+
 }

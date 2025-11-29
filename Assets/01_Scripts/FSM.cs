@@ -247,9 +247,9 @@ public class PlayerAttackState : IPlayerState
     private void AttackCheck(PlayerController player)
     {
         int num = (int)player.AttackMotion - 1;
-        Vector2 _attackPos = (Vector2)player.PlayerTransform.position + player.AttackElements.AttackPoses[num] * Vector2.right * player.Dir;
-        int _count = Physics2D.OverlapBox(_attackPos, player.AttackElements.AttackSizes[num], 0, player.AttackElements.ContactFilter, player.OverlapHits);
-
+        Vector2 _attackPos = (Vector2)player.PlayerTransform.position + player.AttackElements.AttackHitBoxes[num].Offset * Vector2.right * player.Dir;
+        int _count = Physics2D.OverlapBox(_attackPos, player.AttackElements.AttackHitBoxes[num].Size, 0, player.AttackElements.ContactFilter, player.OverlapHits);
+        
         for (int i = 0; i < _count; i++)
         {
             if (!player.OverlapHits[i].TryGetComponent(out BoxCollider2D _hit))
@@ -287,6 +287,8 @@ public class PlayerAttackState : IPlayerState
             Debug.Log(_hitList[i].name);
         }
     }
+
+
 }
 public class PlayerSkillState : IPlayerState
 {
