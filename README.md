@@ -24,3 +24,4 @@
 
 ## 5. Future Work (ToDo)
 - Integrate Google Spreadsheet for external data management.
+- Integrate Behaviour Tree for Non-Playable Character AI.
