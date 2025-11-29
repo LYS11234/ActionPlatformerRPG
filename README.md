@@ -22,6 +22,8 @@
 - Cause: Frequent memory allocation from using `new` keywords and `GetComponent` inside Update loops.
 - Solution: Optimized performance by caching components and members at startup.
 
-## 5. Future Work (ToDo)
+## 5. Current Work
 - Integrate Google Spreadsheet for external data management.
+
+## 6. Future Work (ToDo)
 - Integrate Behaviour Tree for Non-Playable Character AI.
