@@ -37,7 +37,10 @@ public class GoogleSpreadSheetManager : MonoBehaviour
     public async void FetchGoogleSheet()
     {
         cachedSOs.Clear();
-        unavailableSheetArray = unavailableSheets.Split('/');
+        if (unavailableSheets.Length > 0)
+        {
+            unavailableSheetArray = unavailableSheets.Split('/');
+        }
         foreach (string url in googleSheetURL)
         {
             if(string.IsNullOrEmpty(url))
@@ -135,17 +138,17 @@ public class GoogleSpreadSheetManager : MonoBehaviour
                 {
                     continue;
                 }
-                if(field.FieldType.GetGenericTypeDefinition() != typeof(List<>))
+                if(field.FieldType.GetGenericTypeDefinition() != typeof(Dictionary<,>))
                 {
                     continue;
                 }
-                Type _innerType = field.FieldType.GetGenericArguments()[0];
-                if (!_innerType.IsGenericType)
+                Type[] _args = field.FieldType.GetGenericArguments();
+                if (_args[0] != typeof(string))
                 {
                     continue;
                 }
-                if(_innerType.GetGenericTypeDefinition() != typeof(List<>))
-                {
+                if( _args[1] != _dataType)
+                { 
                     continue;
                 }
                 _targetField = field;
@@ -153,10 +156,10 @@ public class GoogleSpreadSheetManager : MonoBehaviour
             }
             if (_targetField == null)
             {
-                Debug.LogError($"{_soClassName} doesn't have List<List<{_typeName}>>");
+                Debug.LogError($"{_soClassName} doesn't have Dictionary<string, {_dataClassName}>()");
                 return;
             }
-            IList _mainList = (IList)Activator.CreateInstance(_targetField.FieldType);
+            IDictionary _mainDict = (IDictionary)Activator.CreateInstance(_targetField.FieldType);
 
             foreach(var property in _dataObject.Properties())
             {
@@ -167,13 +170,25 @@ public class GoogleSpreadSheetManager : MonoBehaviour
                 }
                 JToken _tabData = property.Value;
 
-                Type _innerListType = typeof(List<>).MakeGenericType(_dataType);
-                object _parsedList = _tabData.ToObject(_innerListType);
-
-                _mainList.Add(_parsedList);
+                Type _listType = typeof(List<>).MakeGenericType(_dataType);
+                IList _parsedList = (IList)_tabData.ToObject(_listType);
+                foreach (var item in _parsedList)
+                {
+                    FieldInfo _idField = _dataType.GetField("ID");
+                    string _key = _tabName;
+                    if(_idField != null)
+                    {
+                        _key += "_" + _idField.GetValue(item) as string;
+                    }
+                    if(_mainDict.Contains(_key))
+                    {
+                        continue;
+                    }
+                    _mainDict.Add(_key, item);
+                }
             }
 
-            _targetField.SetValue(_soInstance, _mainList);
+            _targetField.SetValue(_soInstance, _mainDict);
 
             if (cachedSOs.ContainsKey(_typeName))
             {

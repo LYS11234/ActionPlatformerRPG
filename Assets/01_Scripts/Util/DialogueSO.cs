@@ -12,12 +12,13 @@ enum DialogueName
 [CreateAssetMenu(fileName = "DialogueSO", menuName = "ScriptableObject/DialogueSO")]
 public class DialogueSO : ScriptableObject
 {
-    public List<List<DialogueData>> Dialogues = new List<List<DialogueData>>();
+    public Dictionary<string, DialogueData> Dialogues = new Dictionary<string, DialogueData>();
 }
 
 [Serializable]
 public class DialogueData
 {
+    public string ID;
     public string NameEN;
     public string DialogueEN;
     public string NameKR;

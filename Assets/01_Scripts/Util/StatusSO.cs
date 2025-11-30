@@ -2,13 +2,13 @@
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerStatusSO : ScriptableObject
+public class StatusSO : ScriptableObject
 {
-    public List<List<PlayerStatusData>> PlayerStatuses = new List<List<PlayerStatusData>>();
+    public Dictionary<string, StatusData> Statuses = new Dictionary<string, StatusData>();
 }
 
 [System.Serializable]
-public class PlayerStatusData
+public class StatusData
 {
     public float OriginATK;
     public float GunATK;
