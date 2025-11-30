@@ -11,6 +11,9 @@ public class AttackElements
     public float GunATK;
     public float AdditionalATK;
     public float OriginATK;
+    public float OriginAttackSpeed;
+    public float AdditionalAttackSpeed;
+    public float AttackSpeed;
     public int AttackMotionLength { get { return AttackHitBoxes.Length; } }
 }
 

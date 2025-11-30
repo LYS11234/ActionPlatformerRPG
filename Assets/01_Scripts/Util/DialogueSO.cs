@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoogleSheetSO : ScriptableObject
+enum DialogueName
 {
-    public List<List<Dialogues>> Dialogues;
+    Misaki = 0,
+
+}
+
+
+[CreateAssetMenu(fileName = "DialogueSO", menuName = "ScriptableObject/DialogueSO")]
+public class DialogueSO : ScriptableObject
+{
+    public List<List<DialogueData>> Dialogues = new List<List<DialogueData>>();
 }
 
 [Serializable]
-public class Dialogues
+public class DialogueData
 {
     public string NameEN;
     public string DialogueEN;

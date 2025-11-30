@@ -14,16 +14,19 @@ public class GameManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    [SerializeField]
-    private CameraManager _cameraManager;
-    public CameraManager CameraManager { get { return _cameraManager; } }
-    [SerializeField]
-    private PlayerManager _playerManager;
+    [field:SerializeField]
+    public CameraManager CameraManager { get; private set; }
+    [field:SerializeField]
+    public PlayerManager PlayerManager { get; private set; }
 
-    public PlayerManager PlayerManager { get { return _playerManager; } }
-
+    [field:SerializeField]
+    public UIManager UIManager { get; private set; }
     [SerializeField]
-    private UIManager _uiManager;
-    public UIManager UIManager { get { return _uiManager; } }
+    private GoogleSpreadSheetManager _googleSpreadSheetManager;
+
+    private void Start()
+    {
+        _googleSpreadSheetManager.FetchGoogleSheet();
+    }
 
 }

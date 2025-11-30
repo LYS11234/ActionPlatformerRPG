@@ -2826,6 +2826,9 @@ MonoBehaviour:
     GunATK: 0
     AdditionalATK: 0
     OriginATK: 0
+    OriginAttackSpeed: 0
+    AdditionalAttackSpeed: 0
+    AttackSpeed: 0
   OverlapHits:
   - {fileID: 0}
   - {fileID: 0}
@@ -4136,10 +4139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e1ba6340ab0bb46a6d71ec5e240f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoogleSpreadSheetManager
-  isAccessGoogleSheet: 1
-  googleSheetURL: https://script.google.com/macros/s/AKfycbx26eoCml0g9Pve_-pN1bu4yWBvXwtvrwpUOTA5p-HKwtjf1Ylojajh6V4Tl50FSIEH/exec
-  availableSheets: Misaki
-  generateFolderPath: /ScriptableObjects
+  googleSheetURL:
+  - https://script.google.com/macros/s/AKfycbx26eoCml0g9Pve_-pN1bu4yWBvXwtvrwpUOTA5p-HKwtjf1Ylojajh6V4Tl50FSIEH/exec
+  - https://script.google.com/macros/s/AKfycbzEJI5w-vHPKN43rbyTkspThIzoXEkrKHUJkSeDLw4rlsGS5YyiiLsl7oibyvvGtBYH-A/exec
+  unavailableSheets: 
 --- !u!1 &1714338121
 GameObject:
   m_ObjectHideFlags: 0
@@ -7744,9 +7747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095a67ff968dba947a67996228f1b1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _cameraManager: {fileID: 519420033}
-  _playerManager: {fileID: 758194817}
-  _uiManager: {fileID: 583515985}
+  <CameraManager>k__BackingField: {fileID: 519420033}
+  <PlayerManager>k__BackingField: {fileID: 758194817}
+  <UIManager>k__BackingField: {fileID: 583515985}
+  _googleSpreadSheetManager: {fileID: 1652988348}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

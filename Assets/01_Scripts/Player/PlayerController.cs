@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     #endregion Audio Clips
     #endregion Audio
     [field:Space(10)]
+    #region Status
     [field:Header("Status")]
     [field: SerializeField]
     public MoveElements MoveElements { get; private set; }
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public AttackElements AttackElements { get; private set; }
     
     public Parameters Parameters { get; private set; }
+    #endregion
     [field: Space(10)]
     // 인스펙터에서 할당하는 것을 더 선호.
     #region States
@@ -79,7 +81,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float Dir {  get; private set; }
 
-    #region Status
+    #region Input System
+    // 나중에 InputManager.cs 로 옮기기.
     protected float attackSpeed;
     public bool IsSprinting { get; protected set; }
     public bool IsCrouching { get; protected set; }
@@ -115,10 +118,6 @@ public class PlayerController : MonoBehaviour
     #endregion
     #region Take Damage or Give Damage
     public Action<BoxCollider2D, float> Attack;
-    #endregion
-    #region Player Classes
-    
-
     #endregion
 
     protected void Awake()
@@ -328,17 +327,6 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Jump
-    public void StartJump()
-    {
-        if (IsJump)
-        {
-            return;
-        }
-        int num = UnityEngine.Random.Range(0, jumpSounds.Length);
-        source.clip = jumpSounds[num];
-        source.Play();
-    }
-
     public void IsLand()
     {
         Animator.SetBool(JumpHash, false);
