@@ -172,6 +172,7 @@ public class PlayerController : MonoBehaviour
     //    playerCam.SetTarget(characterTransform);
     //}
 
+    #region Input System
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveInput = context.ReadValue<Vector2>();
@@ -227,7 +228,7 @@ public class PlayerController : MonoBehaviour
     {
         IsCrouching = context.ReadValueAsButton();
     }
-
+    #endregion
     public void SetIdleState()
     {
         ChangeCanAttack();
