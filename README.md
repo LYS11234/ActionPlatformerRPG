@@ -11,6 +11,7 @@
 - Character System: Implemented FSM (Finite State Machine) for Movement, Attack, and Damage states.
 - Combat System: Hitbox-based damage calculation and skill system with limited usage.
 - UI: Real-time HP and MP status display.
+- Data Management: Integrate Google Spreadsheet for external data management. (now, connecting to data.)
 
 ## 3. Technical Implementation
 ### 3.1 Architecture and Design Pattern
@@ -23,7 +24,7 @@
 - Solution: Optimized performance by caching components and members at startup.
 
 ## 5. Current Work
-- Integrate Google Spreadsheet for external data management.
+- Connect datas from Google spreadsheet.
 
 ## 6. Future Work (ToDo)
 - Integrate Behaviour Tree for Non-Playable Character AI.
