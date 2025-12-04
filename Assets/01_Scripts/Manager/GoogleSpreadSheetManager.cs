@@ -11,17 +11,17 @@ using System.Reflection;
 public class GoogleSpreadSheetManager : MonoBehaviour
 {
     // GameManager에 파싱해두기에 굳이 싱글톤 사용할 필요 없음
-    [Tooltip("구글 스프레드 시트 URL 모음")]
+    [Tooltip("구글 스프레드 시트 App Script URL 모음")]
     [SerializeField]
     private string[] googleSheetURL;
     [Tooltip("사용하지 않을 시트를 지정합니다. 공백없이, /로 구분합니다. 예: Sheet1/Sheet2")]
     [SerializeField]
     private string unavailableSheets;
-    [Tooltip("외부에서 접근할 수 있는 Scriptable Object입니다.")]
+    
     private string[] unavailableSheetArray;
-
+    
     [field:SerializeField]
-    private Dictionary<string, ScriptableObject> cachedSOs = new Dictionary<string, ScriptableObject>();
+    private Dictionary<string, ScriptableObject> cachedSOs = new Dictionary<string, ScriptableObject>(); // 캐시된 Scriptable Object들
 
     public T GetData<T>(string _tableName) where T : ScriptableObject
     {
@@ -75,7 +75,7 @@ public class GoogleSpreadSheetManager : MonoBehaviour
             string _tableName = _parsedJson["fileName"].ToString();
             string _dataJson = _parsedJson["data"].ToString();
             Debug.LogError(_parsedJson.ToString());
-            AddListOnList(_tableName, _dataJson);
+            AddSODictionary(_tableName, _dataJson);
         }
         catch (Exception e)
         {
@@ -95,7 +95,7 @@ public class GoogleSpreadSheetManager : MonoBehaviour
             }
             catch (HttpRequestException e)
             {
-                Debug.LogError($"Error: {e.HelpLink}\n{e.Message}\n{e.Source}");
+                Debug.LogError($"Error:{e.Message}\n{e.StackTrace}");
                 return null;
             }
         }
@@ -103,10 +103,14 @@ public class GoogleSpreadSheetManager : MonoBehaviour
 
     private bool IsExistUnavailableSheets(string sheetName)
     {
+        if(string.IsNullOrEmpty(unavailableSheets))
+        {
+            return false;
+        }
         return Array.Exists(unavailableSheetArray, x => x == sheetName);
     }
 
-    public void AddListOnList(string _typeName, string _data)
+    public void AddSODictionary(string _typeName, string _data)
     {
         string _soClassName = $"{_typeName}SO";
         string _dataClassName = $"{_typeName}Data";
@@ -201,7 +205,7 @@ public class GoogleSpreadSheetManager : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError($"Error: {e.Message}");
+            Debug.LogError($"Error: {e.Message}\n{e.StackTrace}");
         }
     }
 }
