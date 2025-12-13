@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Excel;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     [field:SerializeField]
     public UIManager UIManager { get; private set; }
+    [field:SerializeField]
+    public CombatManager CombatManager { get; private set; }
     [SerializeField]
     private GoogleSpreadSheetManager _googleSpreadSheetManager;
 

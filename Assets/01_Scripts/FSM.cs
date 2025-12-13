@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public interface IPlayerState
 {
@@ -18,6 +19,11 @@ public class PlayerIdleState : IPlayerState
     public void Execute(PlayerController player)
     {
         player.CheckTick();
+        if(player.idleCount >= 6)
+        {
+            player.idleCount = 0;
+            player.ChangeIdleMotion();
+        }
         if(player.CheckState())
         {
             return;
@@ -76,18 +82,18 @@ public class PlayerMoveState : IPlayerState
 
     private void Move(PlayerController player)
     {
-        player.RigidBody.linearVelocityX = player.MoveInput.x * player.MoveElements.CurrentMoveSpeed;
+        player.RigidBody.linearVelocityX = player.MoveInput.x * player.PlayerData.MoveStatus.CurrentMoveSpeed;
     }
 
     private void IsRun(PlayerController player)
     {
         if (player.IsSprinting)
         {
-            player.MoveElements.Run();
+            player.PlayerData.MoveStatus.Run();
             player.Animator.SetFloat(player.MoveHash, 2);
             return;
         }
-        player.MoveElements.Walk();
+        player.PlayerData.MoveStatus.Walk();
         player.Animator.SetFloat(player.MoveHash, 1);
     }
 
@@ -102,7 +108,7 @@ public class PlayerJumpState : IPlayerState
 {
     public void Enter(PlayerController player)
     {
-        StartJump(player); // 왜 두 번 호출되지?
+        StartJump(player);
     }
     public void Execute(PlayerController player)
     {
@@ -122,7 +128,7 @@ public class PlayerJumpState : IPlayerState
 
     private void StartJump(PlayerController player)
     {
-        player.RigidBody.AddForceY(player.MoveElements.JumpForce, ForceMode2D.Impulse);
+        player.RigidBody.AddForceY(player.PlayerData.MoveStatus.JumpForce, ForceMode2D.Impulse);
         player.Animator.SetBool(player.JumpHash, true);
         player.PlaySound(player.jumpSounds[Random.Range(0, player.jumpSounds.Length)]);
     }
@@ -161,15 +167,15 @@ public class PlayerFallState : IPlayerState
     private void CheckLinearVelocityY(PlayerController player)
     {
         player.Animator.SetFloat(player.VelYHash, player.RigidBody.linearVelocityY);
+        if(player.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == player.IdleStateHash && player.RigidBody.linearVelocityY > -0.1f)
+        {
+            player.ChangeState(player.IdleState);
+        }
     }
 
     private void Fall(PlayerController player)
     {
         CheckLinearVelocityY(player);
-        if(player.RigidBody.linearVelocityY > -0.1f)
-        {
-            player.ChangeState(player.IdleState);
-        }
     }
 }
 
@@ -187,6 +193,7 @@ public class PlayerCrouchState : IPlayerState
         {
             return;
         }
+        Debug.Log("CrouchEnd");
         player.ChangeState(player.IdleState);
     }
     public void Exit(PlayerController player)
@@ -197,15 +204,15 @@ public class PlayerCrouchState : IPlayerState
     private void StartCrouch(PlayerController player)
     {
         player.Animator.SetBool(player.CrouchHash, true);
-        player.Collider.size = player.MoveElements.CrouchSize;
-        player.Collider.offset = player.MoveElements.CrouchOffset;
+        player.Collider.size = player.PlayerData.MoveStatus.CrouchSize;
+        player.Collider.offset = player.PlayerData.MoveStatus.CrouchOffset;
     }
 
     private void EndCrouch(PlayerController player)
     {
         player.Animator.SetBool(player.CrouchHash, false);
-        player.Collider.size = player.MoveElements.StandSize;
-        player.Collider.offset = player.MoveElements.StandOffset;
+        player.Collider.size = player.PlayerData.MoveStatus.StandSize;
+        player.Collider.offset = player.PlayerData.MoveStatus.StandOffset;
     }
 }
 
@@ -237,7 +244,7 @@ public class PlayerAttackState : IPlayerState
     private void NextAttackMotion(PlayerController player)
     {
         player.CurrentTime = 5;
-        if (player.AttackMotion < player.AttackElements.AttackMotionLength)
+        if (player.AttackMotion < player.PlayerData.AttackStatus.AttackMotionLength)
         {
             player.AttackMotion++;
             return;
@@ -247,44 +254,36 @@ public class PlayerAttackState : IPlayerState
     private void AttackCheck(PlayerController player)
     {
         int num = (int)player.AttackMotion - 1;
-        Vector2 _attackPos = (Vector2)player.PlayerTransform.position + player.AttackElements.AttackHitBoxes[num].Offset * Vector2.right * player.Dir;
-        int _count = Physics2D.OverlapBox(_attackPos, player.AttackElements.AttackHitBoxes[num].Size, 0, player.AttackElements.ContactFilter, player.OverlapHits);
+        Vector2 _attackPos = (Vector2)player.PlayerTransform.position + player.PlayerData.AttackStatus.AttackHitBoxes[num].Offset * Vector2.right * player.Dir;
+        int _count = Physics2D.OverlapBox(_attackPos, player.PlayerData.AttackStatus.AttackHitBoxes[num].Size, 0, player.PlayerData.AttackStatus.ContactFilter, player.OverlapHits);
         
-        for (int i = 0; i < _count; i++)
-        {
-            if (!player.OverlapHits[i].TryGetComponent(out BoxCollider2D _hit))
-            {
-                continue;
-            }
-            player.HitList.Add(_hit);
-        }
-        if (player.HitList.Count <= 0)
+        if(_count <= 0)
         {
             return;
         }
-        switch (player.AttackMotion)
-        {
-            case 3:
-                {
-                    ThirdAttack(player, player.HitList);
-                    break;
-                }
-            default:
-                {
-                    player.Attack?.Invoke(player.HitList[0], player.AttackElements.ATK); // CombatManager에 연결해서 대미지 주는 함수 호출할 것.
-                    Debug.Log(player.HitList[0].name);
-                    break;
-                }
-        }
-        player.HitList.Clear();
-    }
 
-    private void ThirdAttack(PlayerController player, List<BoxCollider2D> _hitList)
-    {
-        for(int i = 0; i < _hitList.Count; i++)
+
+        for (int i = 0; i < _count; i++)
         {
-            player.Attack?.Invoke(_hitList[i], player.AttackElements.ATK);
-            Debug.Log(_hitList[i].name);
+            player.OverlapHits[i].TryGetComponent<IDamageable>(out var _target);
+
+            if(_target == null)
+            {
+                continue;
+            }
+            switch (player.AttackMotion)
+            {
+                case 3:
+                    {
+                        player.Attack?.Invoke(_target, player.PlayerData.AttackStatus.ATK);
+                        break;
+                    }
+                default:
+                    {
+                        player.Attack?.Invoke(_target, player.PlayerData.AttackStatus.ATK); // CombatManager에 연결해서 대미지 주는 함수 호출할 것.
+                        return;
+                    }
+            }
         }
     }
 
@@ -333,41 +332,62 @@ public class ShootState : IPlayerState
     {
         player.GunDirection.x = player.Dir;
         player.GunDirection.y = player.MoveInput.y;
-        int _count = Physics2D.Raycast(player.PlayerTransform.position, player.GunDirection, player.AttackElements.ContactFilter, player.RayHits);
-        for (int i = 0; i < _count; i++)
-        {
-            if (!player.RayHits[i].transform.TryGetComponent<BoxCollider2D>(out BoxCollider2D hit))
-            {
-                continue;
-            }
-            player.HitList.Add(hit);
-        }
-        if(player.HitList.Count <= 0)
+        int _count = Physics2D.Raycast(player.PlayerTransform.position, player.GunDirection, player.PlayerData.AttackStatus.ContactFilter, player.RayHits);
+        if (_count <= 0)
         {
             return;
         }
-        for (int i = 0; i < player.HitList.Count; i++)
+
+        for (int i = 0; i < _count; i++)
         {
-            player.Attack(player.HitList[i], player.AttackElements.GunATK);
+            player.RayHits[i].transform.TryGetComponent<IDamageable>(out var _target);
+
+            if (_target == null)
+            {
+                continue;
+            }
+            player.Attack?.Invoke(_target, player.PlayerData.AttackStatus.GunATK);
         }
-        player.HitList.Clear();
     }
 }
 
 public class PlayerDamageState : IPlayerState
 {
+    private float currentTime;
+    private int currentDamageState;
+    private float deltaTime = Time.deltaTime;
     public void Enter(PlayerController player)
     {
-
+        player.Animator.SetFloat(player.DamageStateHash, player.DamageRate);
+        player.Animator.SetTrigger(player.DamageHash);
+        if(player.DamageRate < 10f)
+        {
+            currentDamageState = 0;
+        }
+        else if(player.DamageRate < 20f)
+        {
+            currentDamageState = 1;
+        }
+        else
+        {
+            currentDamageState = 2;
+        }
     }
 
     public void Execute(PlayerController player)
     {
-
+        currentTime += deltaTime;
+        if(currentTime >= player.StunTime[currentDamageState])
+        {
+            player.ChangeState(player.IdleState);
+        }
     }
 
     public void Exit(PlayerController player)
     {
-
+        currentTime = 0;
+        currentDamageState = 0;
     }
+
+    
 }

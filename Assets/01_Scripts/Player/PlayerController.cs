@@ -5,7 +5,7 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     #region Components
     [Header("Components")]
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] AttackSounds { get; private set; }
     [field:SerializeField]
     public AudioClip[] IdleSounds { get; private set; }
-    [SerializeField]
+    [field:SerializeField]
     public AudioClip[] EmotionSounds { get; private set; }
     [field:SerializeField]
     public AudioClip[] jumpSounds { get; private set; }
@@ -40,33 +40,29 @@ public class PlayerController : MonoBehaviour
     [field:Space(10)]
     #region Status
     [field:Header("Status")]
-    [field: SerializeField]
-    public MoveElements MoveElements { get; private set; }
-    [field: SerializeField]
-    public AttackElements AttackElements { get; private set; }
-    
-    public Parameters Parameters { get; private set; }
+    public PlayerInfo PlayerData;
+    [field:SerializeField]
+    public float[] StunTime { get; private set; }
     #endregion
     [field: Space(10)]
     // 인스펙터에서 할당하는 것을 더 선호.
     #region States
     private IPlayerState currentState;
-    public IPlayerState IdleState { get; protected set; }
-    public IPlayerState AttackState { get; protected set; }
-    public IPlayerState MoveState { get; protected set; }
-    public IPlayerState JumpState { get; protected set; }
-    public IPlayerState FallState { get; protected set; }
-    public IPlayerState CrouchState { get; protected set; }
-    public IPlayerState SkillState { get; protected set; }
-    public IPlayerState ShootState { get; protected set; }
+    public IPlayerState IdleState { get; private set; }
+    public IPlayerState AttackState { get; private set; }
+    public IPlayerState MoveState { get; private set; }
+    public IPlayerState JumpState { get; private set; }
+    public IPlayerState FallState { get; private set; }
+    public IPlayerState CrouchState { get; private set; }
+    public IPlayerState SkillState { get; private set; }
+    public IPlayerState ShootState { get; private set; }
+    public IPlayerState DamageState { get; private set; }
     #endregion
 
     [HideInInspector]
     public Collider2D[] OverlapHits = new Collider2D[byte.MaxValue];
     [HideInInspector]
     public RaycastHit2D[] RayHits = new RaycastHit2D[byte.MaxValue];
-    [HideInInspector]
-    public List<BoxCollider2D> HitList;
     [HideInInspector]
     public Vector2 GunDirection = Vector2.zero;
     protected bool canAttack;
@@ -77,9 +73,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     private int bulletCount;
     
+    public int idleCount;
+    
 
-    [SerializeField]
+    [field: SerializeField]
     public float Dir {  get; private set; }
+    public float DamageRate { get; private set; }
 
     #region Input System
     // 나중에 InputManager.cs 로 옮기기.
@@ -105,6 +104,11 @@ public class PlayerController : MonoBehaviour
     public readonly int IsAttackHash = Animator.StringToHash("IsAttack");
     public readonly int ShootHash = Animator.StringToHash("Shoot");
     public readonly int IsShootHash = Animator.StringToHash("IsShoot");
+    public readonly int DamageHash = Animator.StringToHash("Damage");
+    public readonly int DamageStateHash = Animator.StringToHash("DamageState");
+    public readonly int IdleCountHash = Animator.StringToHash("IdleCount");
+
+    public readonly int IdleStateHash = Animator.StringToHash("Unitychan_Idle");
     #endregion
 
 
@@ -117,7 +121,7 @@ public class PlayerController : MonoBehaviour
     public event Action<float, float> UpdateMP;
     #endregion
     #region Take Damage or Give Damage
-    public Action<BoxCollider2D, float> Attack;
+    public Action<IDamageable, float> Attack;
     #endregion
 
     protected void Awake()
@@ -130,29 +134,29 @@ public class PlayerController : MonoBehaviour
         CrouchState = new PlayerCrouchState();
         SkillState = new PlayerSkillState();
         ShootState = new ShootState();
+        DamageState = new PlayerDamageState();
     }
 
     protected void Start()
     {
         //인스펙터로 집어넣자
-
         currentState = IdleState;
         CanAttack = true;
-        MoveElements.StandOffset = new Vector2(Collider.offset.x, Collider.offset.y);
-        MoveElements.StandSize = new Vector2(Collider.size.x, Collider.size.y);
-        MoveElements.CrouchOffset = new Vector2(Collider.offset.x, -0.55f);
-        MoveElements.CrouchSize = new Vector2(Collider.size.x, MoveElements.StandSize.y * 0.5f);
-        Parameters = new Parameters();
+        PlayerData.MoveStatus.StandOffset = new Vector2(Collider.offset.x, Collider.offset.y);
+        PlayerData.MoveStatus.StandSize = new Vector2(Collider.size.x, Collider.size.y);
+        PlayerData.MoveStatus.CrouchOffset = new Vector2(Collider.offset.x, -0.55f);
+        PlayerData.MoveStatus.CrouchSize = new Vector2(Collider.size.x, PlayerData.MoveStatus.StandSize.y * 0.5f);
+        PlayerData.Parameters = new Parameters();
         StartUI();
         currentState.Enter(this);
     }
 
     public void StartUI()
     {
-        Parameters.Init(100, 100); //하드코딩은 Google Sheet에서 읽어오는 방식으로 교체 예정
+        PlayerData.Parameters.Init(100, 100); //하드코딩은 Google Sheet에서 읽어오는 방식으로 교체 예정
         OnShotFired?.Invoke(bulletCount);
-        UpdateHP?.Invoke(Parameters.MaxHP, Parameters.CurrentHP);
-        UpdateMP?.Invoke(Parameters.MaxMP, Parameters.CurrentMP);
+        UpdateHP?.Invoke(PlayerData.Parameters.MaxHP, PlayerData.Parameters.CurrentHP);
+        UpdateMP?.Invoke(PlayerData.Parameters.MaxMP, PlayerData.Parameters.CurrentMP);
     }
     protected void FixedUpdate()
     {
@@ -253,6 +257,7 @@ public class PlayerController : MonoBehaviour
         currentState?.Exit(this);
 
         currentState = _state;
+        Debug.Log($"Current State: {currentState}");
         currentState.Enter(this);
     }
 
@@ -283,6 +288,12 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public void IdleCount()
+    {
+        idleCount++;
+        Animator.SetInteger(IdleCountHash, idleCount);
+    }
+
     #endregion
 
     public void PlaySound(AudioClip _audioClip)
@@ -292,14 +303,14 @@ public class PlayerController : MonoBehaviour
     }
 
     #region Idle
-    protected void ChangeIdleMotion()
+    public void ChangeIdleMotion()
     {
         UnityEngine.Random.InitState(DateTime.Now.Millisecond);
         IdleMotion = UnityEngine.Random.Range(1, 101);
         Animator.SetFloat(IdleHash, IdleMotion % 2);
     }
 
-    public void PlayIdleSound()
+    private void PlayIdleSound()
     {
         source.clip = IdleSounds[(int)Animator.GetFloat(IdleHash)];
         source.Play();
@@ -332,13 +343,21 @@ public class PlayerController : MonoBehaviour
     {
         Animator.SetBool(JumpHash, false);
         Animator.SetFloat(VelYHash, 0);
+        ChangeState(IdleState);
     }
     #endregion
     #region Damage
-    public void GetDamage(float _damage)
+    public void TakeDamage(float _damage)
     {
-        Parameters.UpdateCurrentHP(-_damage);
-        Debug.Log(Parameters.CurrentHP);
+        PlayerData.Parameters.UpdateCurrentHP(-_damage);
+        DamageRate = _damage / PlayerData.Parameters.MaxHP * 100f;
+
+        if (currentState != DamageState)
+        {
+            ChangeState(DamageState);
+        }
+        UpdateHP(PlayerData.Parameters.MaxHP, PlayerData.Parameters.CurrentHP);
+        Debug.Log(PlayerData.Parameters.CurrentHP);
     }
 
     #endregion
@@ -350,12 +369,12 @@ public class PlayerController : MonoBehaviour
     #region Debug
     private void OnDrawGizmos()
     {
-        if (AttackElements == null || AttackElements.AttackHitBoxes == null)
+        if (PlayerData.AttackStatus == null || PlayerData.AttackStatus.AttackHitBoxes == null)
         {
             return;
         }
         Gizmos.color = UnityEngine.Color.red;
-        foreach (var box in AttackElements.AttackHitBoxes)
+        foreach (var box in PlayerData.AttackStatus.AttackHitBoxes)
         {
             Vector3 globalPos = transform.position + (Vector3)box.Offset;
             Gizmos.DrawWireCube(globalPos, box.Size);

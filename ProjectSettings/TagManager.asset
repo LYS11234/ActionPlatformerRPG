@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - CameraBound
+  - Player
   - Water
   - UI
-  - Player
-  - NPC
-  - Monster
-  - Camera
+  - Enemy
+  - 
+  - 
+  - 
   - 
   - 
   - 

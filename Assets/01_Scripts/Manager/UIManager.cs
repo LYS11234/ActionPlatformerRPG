@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -28,10 +28,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private TMP_Text bulletText;
     #endregion
-
-    private Coroutine hpCoroutine;
-
-    private float hpCurrentTime;
+    [SerializeField]
+    private float duration = 1f;
+    [SerializeField]
+    private Ease easeType;
 
     public void UpdateBullet(int _currentBullets)
     {
@@ -42,33 +42,24 @@ public class UIManager : MonoBehaviour
     public void UpdateHP(float _maxHP, float _currentHP)
     {
         hpText.SetText("{0:0}/{1:0}", _currentHP, _maxHP);
-        if (hpCoroutine != null)
-        {
-            StopCoroutine(hpCoroutine);
-        }
-        hpCoroutine = StartCoroutine(HPAnimation(_currentHP/_maxHP));
+        float _targetRatio = _currentHP / _maxHP;
+        
+
+        hpSlider.DOKill();
+        hpSlider.DOValue(_targetRatio, duration).SetEase(easeType);
     }
 
-    private IEnumerator HPAnimation(float currentHPRatio)
-    {
-        float value = hpSlider.value;
-        hpCurrentTime = 0f;
-        while (hpCurrentTime < 1f)
-        {
-            
-            hpSlider.value = Mathf.Lerp(value, currentHPRatio, hpCurrentTime);
-            hpCurrentTime += Time.deltaTime;
-            yield return null;
-        }
-        hpSlider.value = currentHPRatio;
-    }
+    
     #endregion
 
     #region MP UI
     public void UpdateMP(float _maxMP, float _currentMP)
     {
         mpText.SetText("{0:0}/{1:0}", _currentMP, _maxMP);
-        mpSlider.value = (_currentMP / _maxMP);
+        float _targetRatio = _currentMP / _maxMP;
+
+        mpSlider.DOKill();
+        mpSlider.DOValue(_targetRatio, duration).SetEase(easeType);
     }
     #endregion
 }
