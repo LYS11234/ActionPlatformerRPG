@@ -24,11 +24,13 @@ public class GameManager : MonoBehaviour
     [field:SerializeField]
     public CombatManager CombatManager { get; private set; }
     [SerializeField]
-    private GoogleSpreadSheetManager _googleSpreadSheetManager;
+    private GoogleSpreadSheetManager googleSpreadSheetManager;
+    [SerializeField]
+    private DataManager dataManager;
 
     private void Start()
     {
-        _googleSpreadSheetManager.FetchGoogleSheet();
+        googleSpreadSheetManager.FetchGoogleSheet();
     }
 
 }

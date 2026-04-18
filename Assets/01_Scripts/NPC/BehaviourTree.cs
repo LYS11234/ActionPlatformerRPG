@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public enum NodeState
 {
@@ -107,6 +108,13 @@ public class CharmingNode : Node
 
 public class FollowingNode : Node
 {
+    private readonly PlayerController target;
+    private readonly NPCController self;
+    public FollowingNode(PlayerController _target, NPCController _self)
+    {
+        target = _target;
+        self = _self;
+    }
     public override NodeState Evaluate()
     {
         return NodeState.Success;
