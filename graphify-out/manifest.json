@@ -1,0 +1,132 @@
+{
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\CharacterController.cs": {
+    "mtime": 1776595580.606459,
+    "ast_hash": "d95ec9dcf0f347574cb5410af8278201",
+    "semantic_hash": "d95ec9dcf0f347574cb5410af8278201"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\FSM.cs": {
+    "mtime": 1776595580.6089668,
+    "ast_hash": "dd71fbed64935969eb3305135f4e181a",
+    "semantic_hash": "dd71fbed64935969eb3305135f4e181a"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\MemoryChecker.cs": {
+    "mtime": 1777821208.8756692,
+    "ast_hash": "7da39829c061796f3f3826f2b929c842",
+    "semantic_hash": "7da39829c061796f3f3826f2b929c842"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Parameters.cs": {
+    "mtime": 1776595580.634615,
+    "ast_hash": "8bd9c31bd3270dfaafe68166b27f899a",
+    "semantic_hash": "8bd9c31bd3270dfaafe68166b27f899a"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\CombatManager.cs": {
+    "mtime": 1776595580.6119673,
+    "ast_hash": "69acdb0192f116bcb3ba9cfacd5440fa",
+    "semantic_hash": "69acdb0192f116bcb3ba9cfacd5440fa"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\DataManager.cs": {
+    "mtime": 1776595580.6141107,
+    "ast_hash": "ef924605c13417f6ab9821feccd6a850",
+    "semantic_hash": "ef924605c13417f6ab9821feccd6a850"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\GameManager.cs": {
+    "mtime": 1777821148.0214255,
+    "ast_hash": "20324523837f56a0850cc4c32c12bcdc",
+    "semantic_hash": "20324523837f56a0850cc4c32c12bcdc"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\GoogleSpreadSheetManager.cs": {
+    "mtime": 1776595580.6176522,
+    "ast_hash": "4207b4fdbafb5c8b09ea355bb04bce21",
+    "semantic_hash": "4207b4fdbafb5c8b09ea355bb04bce21"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\PlayerManager.cs": {
+    "mtime": 1776595580.618652,
+    "ast_hash": "9d71ebe8c2e7c07288365c3930f382b4",
+    "semantic_hash": "9d71ebe8c2e7c07288365c3930f382b4"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\SceneManager.cs": {
+    "mtime": 1776595580.6206508,
+    "ast_hash": "aaa8ee09b07fa8532d4c821daf405649",
+    "semantic_hash": "aaa8ee09b07fa8532d4c821daf405649"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Manager\\UIManager.cs": {
+    "mtime": 1776595580.6216514,
+    "ast_hash": "ff3181434f3369ea87a4ddc706af9f1e",
+    "semantic_hash": "ff3181434f3369ea87a4ddc706af9f1e"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\NPC\\BehaviourTree.cs": {
+    "mtime": 1776595580.6285186,
+    "ast_hash": "1b42b514facd8415beee89f614d50be4",
+    "semantic_hash": "1b42b514facd8415beee89f614d50be4"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\NPC\\NPCController.cs": {
+    "mtime": 1776595580.6336155,
+    "ast_hash": "bceb95f36ae10ea6b59966f9cc60477d",
+    "semantic_hash": "bceb95f36ae10ea6b59966f9cc60477d"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\NPC\\Ally\\CatController.cs": {
+    "mtime": 1776595580.6265142,
+    "ast_hash": "1cab63610d041ce22516b01f3a50049b",
+    "semantic_hash": "1cab63610d041ce22516b01f3a50049b"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\NPC\\Enemy\\EnemyManager.cs": {
+    "mtime": 1776595580.6315184,
+    "ast_hash": "5364837bf7060f8b39735fc19497ec9d",
+    "semantic_hash": "5364837bf7060f8b39735fc19497ec9d"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Player\\CameraManager.cs": {
+    "mtime": 1776595580.638491,
+    "ast_hash": "50e3f25c29ef81c60da3d522829f053f",
+    "semantic_hash": "50e3f25c29ef81c60da3d522829f053f"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Player\\PlayerActionController.cs": {
+    "mtime": 1776595580.6404905,
+    "ast_hash": "cff8a72c7f301ef8d63cbfc8a5857aa0",
+    "semantic_hash": "cff8a72c7f301ef8d63cbfc8a5857aa0"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Player\\PlayerController.cs": {
+    "mtime": 1776595580.6425192,
+    "ast_hash": "1afcec0f716f4e7249849b2cb6678f59",
+    "semantic_hash": "1afcec0f716f4e7249849b2cb6678f59"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Player\\PlayerMoveController.cs": {
+    "mtime": 1776595580.6472168,
+    "ast_hash": "b750e93ed10d2f179c4eeec3bce24824",
+    "semantic_hash": "b750e93ed10d2f179c4eeec3bce24824"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Player\\PlayerInfo\\PlayerInfo.cs": {
+    "mtime": 1776595580.645707,
+    "ast_hash": "6a3efb4d6960650f1b6c0f48c73de231",
+    "semantic_hash": "6a3efb4d6960650f1b6c0f48c73de231"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Util\\DialogueData.cs": {
+    "mtime": 1776595580.650217,
+    "ast_hash": "0d564bd18ff6b3fb7a80b60ba03e5474",
+    "semantic_hash": "0d564bd18ff6b3fb7a80b60ba03e5474"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Util\\DialogueSO.cs": {
+    "mtime": 1776595580.6525433,
+    "ast_hash": "59343b6df3072f416d87d20f4bf2f44e",
+    "semantic_hash": "59343b6df3072f416d87d20f4bf2f44e"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Util\\ExcelToJson.cs": {
+    "mtime": 1776595580.654544,
+    "ast_hash": "b1ccd891b2abf9d44e1632265e53c0ad",
+    "semantic_hash": "b1ccd891b2abf9d44e1632265e53c0ad"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Util\\ExcelToScriptable.cs": {
+    "mtime": 1776595580.6571128,
+    "ast_hash": "5875dc1e45ce051d743c52131f73bff4",
+    "semantic_hash": "5875dc1e45ce051d743c52131f73bff4"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Util\\StatusData.cs": {
+    "mtime": 1776595580.6581128,
+    "ast_hash": "037c62520eb8dd51529894d40b27d633",
+    "semantic_hash": "037c62520eb8dd51529894d40b27d633"
+  },
+  "G:\\UnityProjects\\UnityChan\\Assets\\01_Scripts\\Util\\StatusSO.cs": {
+    "mtime": 1776595580.6601129,
+    "ast_hash": "506c520684695752eec80b2035090256",
+    "semantic_hash": "506c520684695752eec80b2035090256"
+  }
+}

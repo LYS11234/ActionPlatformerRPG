@@ -11,14 +11,14 @@ TagManager:
   - Player
   - Water
   - UI
-  - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Items
+  - StaticObjects
+  - NoCollisionObjects
+  - BrakableObjects
+  - InteractableObjects
+  - Reflections
+  - Obstructors
+  - WaterPostProcessing
   - 
   - 
   - 

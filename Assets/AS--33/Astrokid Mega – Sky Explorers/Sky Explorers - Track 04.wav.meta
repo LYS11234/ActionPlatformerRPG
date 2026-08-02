@@ -1,11 +1,19 @@
 fileFormatVersion: 2
 guid: 5bee3691c3f78534cb19bec5d129bbf1
+AssetOrigin:
+  serializedVersion: 1
+  productId: 340812
+  packageName: "Astrokid Mega \u2013 Sky Explorers"
+  packageVersion: 1.0
+  assetPath: "Assets/AS--33/Astrokid Mega \u2013 Sky Explorers/Sky Explorers - Track
+    04.wav"
+  uploadId: 810048
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8
   defaultSettings:
     serializedVersion: 2
-    loadType: 0
+    loadType: 2
     sampleRateSetting: 0
     sampleRateOverride: 44100
     compressionFormat: 0
@@ -21,11 +29,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 340812
-  packageName: "Astrokid Mega \u2013 Sky Explorers"
-  packageVersion: 1.0
-  assetPath: "Assets/AS--33/Astrokid Mega \u2013 Sky Explorers/Sky Explorers - Track
-    04.wav"
-  uploadId: 810048

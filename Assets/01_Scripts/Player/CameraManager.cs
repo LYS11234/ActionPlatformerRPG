@@ -17,6 +17,7 @@ public class CameraManager : MonoBehaviour
 
     private float halfWidth;
     private float halfHeight;
+    private Vector3 moveDir = new Vector2();
 
     private Camera thisCam;
 
@@ -29,8 +30,6 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         thisCam = GetComponent<Camera>();
-        maxBound = bound.bounds.max;
-        minBound = bound.bounds.min;
         halfHeight = thisCam.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
     }
@@ -61,6 +60,7 @@ public class CameraManager : MonoBehaviour
     {
         targetPosition = target.position;
         targetPosition.z = transform.position.z;
+
         transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed);
 
         float clampX = Mathf.Clamp(transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
@@ -71,5 +71,12 @@ public class CameraManager : MonoBehaviour
         currentPos.z = transform.position.z;
 
         transform.position = currentPos;
+    }
+
+    public void SetBound(BoxCollider2D _bound)
+    {
+        bound = _bound;
+        maxBound = bound.bounds.max;
+        minBound = bound.bounds.min;
     }
 }

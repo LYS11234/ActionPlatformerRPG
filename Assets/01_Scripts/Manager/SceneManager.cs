@@ -4,6 +4,8 @@ public class SceneManager : MonoBehaviour
 {
     [SerializeField]
     private PlayerController player;
+    [SerializeField]
+    private BoxCollider2D bound;
     void Start()
     {
         player.OnShotFired += GameManager.Instance.UIManager.UpdateBullet;
@@ -11,7 +13,9 @@ public class SceneManager : MonoBehaviour
         player.UpdateMP += GameManager.Instance.UIManager.UpdateMP;
         player.Attack += GameManager.Instance.CombatManager.CalculateDamage;
         GameManager.Instance.CameraManager.SetTarget(player.transform);
+        GameManager.Instance.CameraManager.SetBound(bound);
         GameManager.Instance.PlayerManager.SetController(player);
+        
     }
 #if UNITY_EDITOR
     [ContextMenu("Damage 9")]

@@ -1,0 +1,5099 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "CharacterController.cs",
+      "file_type": "code",
+      "source_file": "CharacterController.cs",
+      "source_location": "L1",
+      "id": "charactercontroller_cs",
+      "community": 2,
+      "norm_label": "charactercontroller.cs"
+    },
+    {
+      "label": "CharacterController",
+      "file_type": "code",
+      "source_file": "CharacterController.cs",
+      "source_location": "L5",
+      "id": "01_scripts_charactercontroller_charactercontroller",
+      "community": 2,
+      "norm_label": "charactercontroller"
+    },
+    {
+      "label": "MonoBehaviour",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "monobehaviour",
+      "community": 2,
+      "norm_label": "monobehaviour"
+    },
+    {
+      "label": "FSM.cs",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L1",
+      "id": "fsm_cs",
+      "community": 1,
+      "norm_label": "fsm.cs"
+    },
+    {
+      "label": "IPlayerState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L5",
+      "id": "01_scripts_fsm_iplayerstate",
+      "community": 1,
+      "norm_label": "iplayerstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L7",
+      "id": "01_scripts_fsm_iplayerstate_enter",
+      "community": 1,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L8",
+      "id": "01_scripts_fsm_iplayerstate_execute",
+      "community": 1,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L9",
+      "id": "01_scripts_fsm_iplayerstate_exit",
+      "community": 1,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": "PlayerIdleState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L13",
+      "id": "01_scripts_fsm_playeridlestate",
+      "community": 1,
+      "norm_label": "playeridlestate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L15",
+      "id": "01_scripts_fsm_playeridlestate_enter",
+      "community": 1,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L19",
+      "id": "01_scripts_fsm_playeridlestate_execute",
+      "community": 1,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L45",
+      "id": "01_scripts_fsm_playeridlestate_exit",
+      "community": 1,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": "PlayerMoveState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L53",
+      "id": "01_scripts_fsm_playermovestate",
+      "community": 11,
+      "norm_label": "playermovestate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L55",
+      "id": "01_scripts_fsm_playermovestate_enter",
+      "community": 11,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L59",
+      "id": "01_scripts_fsm_playermovestate_execute",
+      "community": 11,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L78",
+      "id": "01_scripts_fsm_playermovestate_exit",
+      "community": 11,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": ".Move()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L83",
+      "id": "01_scripts_fsm_playermovestate_move",
+      "community": 11,
+      "norm_label": ".move()"
+    },
+    {
+      "label": ".IsRun()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L88",
+      "id": "01_scripts_fsm_playermovestate_isrun",
+      "community": 11,
+      "norm_label": ".isrun()"
+    },
+    {
+      "label": ".ResetMove()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L100",
+      "id": "01_scripts_fsm_playermovestate_resetmove",
+      "community": 11,
+      "norm_label": ".resetmove()"
+    },
+    {
+      "label": "PlayerJumpState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L107",
+      "id": "01_scripts_fsm_playerjumpstate",
+      "community": 7,
+      "norm_label": "playerjumpstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L109",
+      "id": "01_scripts_fsm_playerjumpstate_enter",
+      "community": 7,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L113",
+      "id": "01_scripts_fsm_playerjumpstate_execute",
+      "community": 7,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L119",
+      "id": "01_scripts_fsm_playerjumpstate_exit",
+      "community": 7,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": ".CheckLinearVelocityY()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L124",
+      "id": "01_scripts_fsm_playerjumpstate_checklinearvelocityy",
+      "community": 7,
+      "norm_label": ".checklinearvelocityy()"
+    },
+    {
+      "label": ".StartJump()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L129",
+      "id": "01_scripts_fsm_playerjumpstate_startjump",
+      "community": 7,
+      "norm_label": ".startjump()"
+    },
+    {
+      "label": ".Jump()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L136",
+      "id": "01_scripts_fsm_playerjumpstate_jump",
+      "community": 7,
+      "norm_label": ".jump()"
+    },
+    {
+      "label": "PlayerFallState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L147",
+      "id": "01_scripts_fsm_playerfallstate",
+      "community": 7,
+      "norm_label": "playerfallstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L149",
+      "id": "01_scripts_fsm_playerfallstate_enter",
+      "community": 7,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L154",
+      "id": "01_scripts_fsm_playerfallstate_execute",
+      "community": 7,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L162",
+      "id": "01_scripts_fsm_playerfallstate_exit",
+      "community": 7,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": ".CheckLinearVelocityY()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L167",
+      "id": "01_scripts_fsm_playerfallstate_checklinearvelocityy",
+      "community": 7,
+      "norm_label": ".checklinearvelocityy()"
+    },
+    {
+      "label": ".Fall()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L176",
+      "id": "01_scripts_fsm_playerfallstate_fall",
+      "community": 7,
+      "norm_label": ".fall()"
+    },
+    {
+      "label": "PlayerCrouchState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L182",
+      "id": "01_scripts_fsm_playercrouchstate",
+      "community": 1,
+      "norm_label": "playercrouchstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L184",
+      "id": "01_scripts_fsm_playercrouchstate_enter",
+      "community": 1,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L188",
+      "id": "01_scripts_fsm_playercrouchstate_execute",
+      "community": 1,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L199",
+      "id": "01_scripts_fsm_playercrouchstate_exit",
+      "community": 1,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": ".StartCrouch()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L204",
+      "id": "01_scripts_fsm_playercrouchstate_startcrouch",
+      "community": 1,
+      "norm_label": ".startcrouch()"
+    },
+    {
+      "label": ".EndCrouch()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L211",
+      "id": "01_scripts_fsm_playercrouchstate_endcrouch",
+      "community": 1,
+      "norm_label": ".endcrouch()"
+    },
+    {
+      "label": "PlayerAttackState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L219",
+      "id": "01_scripts_fsm_playerattackstate",
+      "community": 10,
+      "norm_label": "playerattackstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L221",
+      "id": "01_scripts_fsm_playerattackstate_enter",
+      "community": 10,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L225",
+      "id": "01_scripts_fsm_playerattackstate_execute",
+      "community": 10,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L229",
+      "id": "01_scripts_fsm_playerattackstate_exit",
+      "community": 10,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": ".Attack()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L235",
+      "id": "01_scripts_fsm_playerattackstate_attack",
+      "community": 10,
+      "norm_label": ".attack()"
+    },
+    {
+      "label": ".NextAttackMotion()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L244",
+      "id": "01_scripts_fsm_playerattackstate_nextattackmotion",
+      "community": 10,
+      "norm_label": ".nextattackmotion()"
+    },
+    {
+      "label": ".AttackCheck()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L254",
+      "id": "01_scripts_fsm_playerattackstate_attackcheck",
+      "community": 10,
+      "norm_label": ".attackcheck()"
+    },
+    {
+      "label": "PlayerSkillState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L292",
+      "id": "01_scripts_fsm_playerskillstate",
+      "community": 1,
+      "norm_label": "playerskillstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L294",
+      "id": "01_scripts_fsm_playerskillstate_enter",
+      "community": 1,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L298",
+      "id": "01_scripts_fsm_playerskillstate_execute",
+      "community": 1,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L302",
+      "id": "01_scripts_fsm_playerskillstate_exit",
+      "community": 1,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": "ShootState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L308",
+      "id": "01_scripts_fsm_shootstate",
+      "community": 1,
+      "norm_label": "shootstate"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L310",
+      "id": "01_scripts_fsm_shootstate_enter",
+      "community": 1,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L314",
+      "id": "01_scripts_fsm_shootstate_execute",
+      "community": 1,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L318",
+      "id": "01_scripts_fsm_shootstate_exit",
+      "community": 1,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": ".Fire()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L323",
+      "id": "01_scripts_fsm_shootstate_fire",
+      "community": 1,
+      "norm_label": ".fire()"
+    },
+    {
+      "label": ".CheckBulletHit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L331",
+      "id": "01_scripts_fsm_shootstate_checkbullethit",
+      "community": 1,
+      "norm_label": ".checkbullethit()"
+    },
+    {
+      "label": "PlayerDamageState",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L354",
+      "id": "01_scripts_fsm_playerdamagestate",
+      "community": 1,
+      "norm_label": "playerdamagestate"
+    },
+    {
+      "label": "float",
+      "file_type": "code",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L10",
+      "id": "float",
+      "community": 3,
+      "norm_label": "float"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L7",
+      "id": "int",
+      "community": 6,
+      "norm_label": "int"
+    },
+    {
+      "label": ".Enter()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L359",
+      "id": "01_scripts_fsm_playerdamagestate_enter",
+      "community": 1,
+      "norm_label": ".enter()"
+    },
+    {
+      "label": ".Execute()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L377",
+      "id": "01_scripts_fsm_playerdamagestate_execute",
+      "community": 1,
+      "norm_label": ".execute()"
+    },
+    {
+      "label": ".Exit()",
+      "file_type": "code",
+      "source_file": "FSM.cs",
+      "source_location": "L386",
+      "id": "01_scripts_fsm_playerdamagestate_exit",
+      "community": 1,
+      "norm_label": ".exit()"
+    },
+    {
+      "label": "MemoryChecker.cs",
+      "file_type": "code",
+      "source_file": "MemoryChecker.cs",
+      "source_location": "L1",
+      "id": "memorychecker_cs",
+      "community": 2,
+      "norm_label": "memorychecker.cs"
+    },
+    {
+      "label": "MemoryChecker",
+      "file_type": "code",
+      "source_file": "MemoryChecker.cs",
+      "source_location": "L4",
+      "id": "01_scripts_memorychecker_memorychecker",
+      "community": 2,
+      "norm_label": "memorychecker"
+    },
+    {
+      "label": ".Update()",
+      "file_type": "code",
+      "source_file": "MemoryChecker.cs",
+      "source_location": "L6",
+      "id": "01_scripts_memorychecker_memorychecker_update",
+      "community": 2,
+      "norm_label": ".update()"
+    },
+    {
+      "label": "Parameters.cs",
+      "file_type": "code",
+      "source_file": "Parameters.cs",
+      "source_location": "L1",
+      "id": "parameters_cs",
+      "community": 3,
+      "norm_label": "parameters.cs"
+    },
+    {
+      "label": "Parameters",
+      "file_type": "code",
+      "source_file": "Parameters.cs",
+      "source_location": "L3",
+      "id": "01_scripts_parameters_parameters",
+      "community": 3,
+      "norm_label": "parameters"
+    },
+    {
+      "label": ".Init()",
+      "file_type": "code",
+      "source_file": "Parameters.cs",
+      "source_location": "L17",
+      "id": "01_scripts_parameters_parameters_init",
+      "community": 3,
+      "norm_label": ".init()"
+    },
+    {
+      "label": ".UpdateCurrentHP()",
+      "file_type": "code",
+      "source_file": "Parameters.cs",
+      "source_location": "L27",
+      "id": "01_scripts_parameters_parameters_updatecurrenthp",
+      "community": 3,
+      "norm_label": ".updatecurrenthp()"
+    },
+    {
+      "label": ".UpdateMaxHP()",
+      "file_type": "code",
+      "source_file": "Parameters.cs",
+      "source_location": "L33",
+      "id": "01_scripts_parameters_parameters_updatemaxhp",
+      "community": 3,
+      "norm_label": ".updatemaxhp()"
+    },
+    {
+      "label": ".UpdateHP()",
+      "file_type": "code",
+      "source_file": "Parameters.cs",
+      "source_location": "L51",
+      "id": "01_scripts_parameters_parameters_updatehp",
+      "community": 3,
+      "norm_label": ".updatehp()"
+    },
+    {
+      "label": "CombatManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L1",
+      "id": "manager_combatmanager_cs",
+      "community": 2,
+      "norm_label": "combatmanager.cs"
+    },
+    {
+      "label": "IDamageable",
+      "file_type": "code",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L3",
+      "id": "manager_combatmanager_idamageable",
+      "community": 2,
+      "norm_label": "idamageable"
+    },
+    {
+      "label": ".TakeDamage()",
+      "file_type": "code",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L5",
+      "id": "manager_combatmanager_idamageable_takedamage",
+      "community": 2,
+      "norm_label": ".takedamage()"
+    },
+    {
+      "label": "CombatManager",
+      "file_type": "code",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L8",
+      "id": "manager_combatmanager_combatmanager",
+      "community": 2,
+      "norm_label": "combatmanager"
+    },
+    {
+      "label": ".CalculateDamage()",
+      "file_type": "code",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L10",
+      "id": "manager_combatmanager_combatmanager_calculatedamage",
+      "community": 2,
+      "norm_label": ".calculatedamage()"
+    },
+    {
+      "label": "DataManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L1",
+      "id": "manager_datamanager_cs",
+      "community": 6,
+      "norm_label": "datamanager.cs"
+    },
+    {
+      "label": "DataManager",
+      "file_type": "code",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L10",
+      "id": "manager_datamanager_datamanager",
+      "community": 6,
+      "norm_label": "datamanager"
+    },
+    {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L26",
+      "id": "string",
+      "community": 6,
+      "norm_label": "string"
+    },
+    {
+      "label": "JsonSerializerOptions",
+      "file_type": "code",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L13",
+      "id": "jsonserializeroptions",
+      "community": 6,
+      "norm_label": "jsonserializeroptions"
+    },
+    {
+      "label": ".Awake()",
+      "file_type": "code",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L16",
+      "id": "manager_datamanager_datamanager_awake",
+      "community": 6,
+      "norm_label": ".awake()"
+    },
+    {
+      "label": ".SaveData()",
+      "file_type": "code",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L21",
+      "id": "manager_datamanager_datamanager_savedata",
+      "community": 6,
+      "norm_label": ".savedata()"
+    },
+    {
+      "label": ".LoadData()",
+      "file_type": "code",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L57",
+      "id": "manager_datamanager_datamanager_loaddata",
+      "community": 6,
+      "norm_label": ".loaddata()"
+    },
+    {
+      "label": "GameManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L1",
+      "id": "manager_gamemanager_cs",
+      "community": 2,
+      "norm_label": "gamemanager.cs"
+    },
+    {
+      "label": "GameManager",
+      "file_type": "code",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L4",
+      "id": "manager_gamemanager_gamemanager",
+      "community": 2,
+      "norm_label": "gamemanager"
+    },
+    {
+      "label": ".Awake()",
+      "file_type": "code",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L7",
+      "id": "manager_gamemanager_gamemanager_awake",
+      "community": 2,
+      "norm_label": ".awake()"
+    },
+    {
+      "label": "GoogleSpreadSheetManager",
+      "file_type": "code",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L27",
+      "id": "googlespreadsheetmanager",
+      "community": 2,
+      "norm_label": "googlespreadsheetmanager"
+    },
+    {
+      "label": "DataManager",
+      "file_type": "code",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L29",
+      "id": "datamanager",
+      "community": 2,
+      "norm_label": "datamanager"
+    },
+    {
+      "label": ".Start()",
+      "file_type": "code",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L32",
+      "id": "manager_gamemanager_gamemanager_start",
+      "community": 2,
+      "norm_label": ".start()"
+    },
+    {
+      "label": "GoogleSpreadSheetManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L1",
+      "id": "manager_googlespreadsheetmanager_cs",
+      "community": 5,
+      "norm_label": "googlespreadsheetmanager.cs"
+    },
+    {
+      "label": "GoogleSpreadSheetManager",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L13",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "community": 5,
+      "norm_label": "googlespreadsheetmanager"
+    },
+    {
+      "label": "Dictionary",
+      "file_type": "code",
+      "source_file": "Util/StatusSO.cs",
+      "source_location": "L7",
+      "id": "dictionary",
+      "community": 5,
+      "norm_label": "dictionary"
+    },
+    {
+      "label": ".GetData()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L29",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager_getdata",
+      "community": 5,
+      "norm_label": ".getdata()"
+    },
+    {
+      "label": ".FetchGoogleSheet()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L40",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager_fetchgooglesheet",
+      "community": 5,
+      "norm_label": ".fetchgooglesheet()"
+    },
+    {
+      "label": ".ProcessURL()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L57",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager_processurl",
+      "community": 5,
+      "norm_label": ".processurl()"
+    },
+    {
+      "label": ".LoadDataGoogleSheet()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L90",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager_loaddatagooglesheet",
+      "community": 5,
+      "norm_label": ".loaddatagooglesheet()"
+    },
+    {
+      "label": ".IsExistUnavailableSheets()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L107",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager_isexistunavailablesheets",
+      "community": 5,
+      "norm_label": ".isexistunavailablesheets()"
+    },
+    {
+      "label": ".AddSODictionary()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L116",
+      "id": "manager_googlespreadsheetmanager_googlespreadsheetmanager_addsodictionary",
+      "community": 5,
+      "norm_label": ".addsodictionary()"
+    },
+    {
+      "label": "CreateClasses()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L217",
+      "id": "manager_googlespreadsheetmanager_createclasses",
+      "community": 5,
+      "norm_label": "createclasses()"
+    },
+    {
+      "label": "CreateScriptableClass()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L230",
+      "id": "manager_googlespreadsheetmanager_createscriptableclass",
+      "community": 5,
+      "norm_label": "createscriptableclass()"
+    },
+    {
+      "label": "SetVariables()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L300",
+      "id": "manager_googlespreadsheetmanager_setvariables",
+      "community": 5,
+      "norm_label": "setvariables()"
+    },
+    {
+      "label": "GetCSharpType()",
+      "file_type": "code",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L392",
+      "id": "manager_googlespreadsheetmanager_getcsharptype",
+      "community": 5,
+      "norm_label": "getcsharptype()"
+    },
+    {
+      "label": "PlayerManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L1",
+      "id": "manager_playermanager_cs",
+      "community": 2,
+      "norm_label": "playermanager.cs"
+    },
+    {
+      "label": "PlayerManager",
+      "file_type": "code",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L3",
+      "id": "manager_playermanager_playermanager",
+      "community": 2,
+      "norm_label": "playermanager"
+    },
+    {
+      "label": "PlayerControls",
+      "file_type": "code",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L5",
+      "id": "playercontrols",
+      "community": 2,
+      "norm_label": "playercontrols"
+    },
+    {
+      "label": ".SetController()",
+      "file_type": "code",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L8",
+      "id": "manager_playermanager_playermanager_setcontroller",
+      "community": 2,
+      "norm_label": ".setcontroller()"
+    },
+    {
+      "label": "SceneManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L1",
+      "id": "manager_scenemanager_cs",
+      "community": 12,
+      "norm_label": "scenemanager.cs"
+    },
+    {
+      "label": "SceneManager",
+      "file_type": "code",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L3",
+      "id": "manager_scenemanager_scenemanager",
+      "community": 12,
+      "norm_label": "scenemanager"
+    },
+    {
+      "label": "PlayerController",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L111",
+      "id": "playercontroller",
+      "community": 12,
+      "norm_label": "playercontroller"
+    },
+    {
+      "label": ".Start()",
+      "file_type": "code",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L7",
+      "id": "manager_scenemanager_scenemanager_start",
+      "community": 12,
+      "norm_label": ".start()"
+    },
+    {
+      "label": "Test9Damage()",
+      "file_type": "code",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L17",
+      "id": "manager_scenemanager_test9damage",
+      "community": 12,
+      "norm_label": "test9damage()"
+    },
+    {
+      "label": "Test19Damage()",
+      "file_type": "code",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L23",
+      "id": "manager_scenemanager_test19damage",
+      "community": 12,
+      "norm_label": "test19damage()"
+    },
+    {
+      "label": "Test30Damage()",
+      "file_type": "code",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L29",
+      "id": "manager_scenemanager_test30damage",
+      "community": 12,
+      "norm_label": "test30damage()"
+    },
+    {
+      "label": "UIManager.cs",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L1",
+      "id": "manager_uimanager_cs",
+      "community": 3,
+      "norm_label": "uimanager.cs"
+    },
+    {
+      "label": "UIManager",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L7",
+      "id": "manager_uimanager_uimanager",
+      "community": 3,
+      "norm_label": "uimanager"
+    },
+    {
+      "label": "TMP_Text",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L10",
+      "id": "tmp_text",
+      "community": 3,
+      "norm_label": "tmp_text"
+    },
+    {
+      "label": "Slider",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L13",
+      "id": "slider",
+      "community": 3,
+      "norm_label": "slider"
+    },
+    {
+      "label": "Ease",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L33",
+      "id": "ease",
+      "community": 3,
+      "norm_label": "ease"
+    },
+    {
+      "label": ".UpdateBullet()",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L36",
+      "id": "manager_uimanager_uimanager_updatebullet",
+      "community": 3,
+      "norm_label": ".updatebullet()"
+    },
+    {
+      "label": ".UpdateHP()",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L42",
+      "id": "manager_uimanager_uimanager_updatehp",
+      "community": 3,
+      "norm_label": ".updatehp()"
+    },
+    {
+      "label": ".UpdateMP()",
+      "file_type": "code",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L56",
+      "id": "manager_uimanager_uimanager_updatemp",
+      "community": 3,
+      "norm_label": ".updatemp()"
+    },
+    {
+      "label": "BehaviourTree.cs",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L1",
+      "id": "npc_behaviourtree_cs",
+      "community": 4,
+      "norm_label": "behaviourtree.cs"
+    },
+    {
+      "label": "Node",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L12",
+      "id": "npc_behaviourtree_node",
+      "community": 4,
+      "norm_label": "node"
+    },
+    {
+      "label": ".Evaluate()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L15",
+      "id": "npc_behaviourtree_node_evaluate",
+      "community": 4,
+      "norm_label": ".evaluate()"
+    },
+    {
+      "label": "Sequence",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L17",
+      "id": "npc_behaviourtree_sequence",
+      "community": 4,
+      "norm_label": "sequence"
+    },
+    {
+      "label": "List",
+      "file_type": "code",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L6",
+      "id": "list",
+      "community": 4,
+      "norm_label": "list"
+    },
+    {
+      "label": ".Evaluate()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L27",
+      "id": "npc_behaviourtree_sequence_evaluate",
+      "community": 4,
+      "norm_label": ".evaluate()"
+    },
+    {
+      "label": ".AddSequence()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L48",
+      "id": "npc_behaviourtree_sequence_addsequence",
+      "community": 4,
+      "norm_label": ".addsequence()"
+    },
+    {
+      "label": "Selector",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L54",
+      "id": "npc_behaviourtree_selector",
+      "community": 4,
+      "norm_label": "selector"
+    },
+    {
+      "label": ".Evaluate()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L64",
+      "id": "npc_behaviourtree_selector_evaluate",
+      "community": 4,
+      "norm_label": ".evaluate()"
+    },
+    {
+      "label": ".AddSelector()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L85",
+      "id": "npc_behaviourtree_selector_addselector",
+      "community": 4,
+      "norm_label": ".addselector()"
+    },
+    {
+      "label": "StandingNode",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L93",
+      "id": "npc_behaviourtree_standingnode",
+      "community": 4,
+      "norm_label": "standingnode"
+    },
+    {
+      "label": ".Evaluate()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L95",
+      "id": "npc_behaviourtree_standingnode_evaluate",
+      "community": 4,
+      "norm_label": ".evaluate()"
+    },
+    {
+      "label": "CharmingNode",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L101",
+      "id": "npc_behaviourtree_charmingnode",
+      "community": 4,
+      "norm_label": "charmingnode"
+    },
+    {
+      "label": ".Evaluate()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L103",
+      "id": "npc_behaviourtree_charmingnode_evaluate",
+      "community": 4,
+      "norm_label": ".evaluate()"
+    },
+    {
+      "label": "FollowingNode",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L109",
+      "id": "npc_behaviourtree_followingnode",
+      "community": 4,
+      "norm_label": "followingnode"
+    },
+    {
+      "label": "NPCController",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "npccontroller",
+      "community": 4,
+      "norm_label": "npccontroller"
+    },
+    {
+      "label": ".Evaluate()",
+      "file_type": "code",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L118",
+      "id": "npc_behaviourtree_followingnode_evaluate",
+      "community": 4,
+      "norm_label": ".evaluate()"
+    },
+    {
+      "label": "NPCController.cs",
+      "file_type": "code",
+      "source_file": "NPC/NPCController.cs",
+      "source_location": "L1",
+      "id": "npc_npccontroller_cs",
+      "community": 2,
+      "norm_label": "npccontroller.cs"
+    },
+    {
+      "label": "NPCController",
+      "file_type": "code",
+      "source_file": "NPC/NPCController.cs",
+      "source_location": "L3",
+      "id": "npc_npccontroller_npccontroller",
+      "community": 2,
+      "norm_label": "npccontroller"
+    },
+    {
+      "label": "Node",
+      "file_type": "code",
+      "source_file": "NPC/NPCController.cs",
+      "source_location": "L5",
+      "id": "node",
+      "community": 2,
+      "norm_label": "node"
+    },
+    {
+      "label": "CatController.cs",
+      "file_type": "code",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L1",
+      "id": "npc_ally_catcontroller_cs",
+      "community": 4,
+      "norm_label": "catcontroller.cs"
+    },
+    {
+      "label": "CatController",
+      "file_type": "code",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L4",
+      "id": "ally_catcontroller_catcontroller",
+      "community": 4,
+      "norm_label": "catcontroller"
+    },
+    {
+      "label": ".Start()",
+      "file_type": "code",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L10",
+      "id": "ally_catcontroller_catcontroller_start",
+      "community": 4,
+      "norm_label": ".start()"
+    },
+    {
+      "label": ".Update()",
+      "file_type": "code",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L19",
+      "id": "ally_catcontroller_catcontroller_update",
+      "community": 4,
+      "norm_label": ".update()"
+    },
+    {
+      "label": "EnemyManager.cs",
+      "file_type": "code",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L1",
+      "id": "npc_enemy_enemymanager_cs",
+      "community": 9,
+      "norm_label": "enemymanager.cs"
+    },
+    {
+      "label": "EnemyManager",
+      "file_type": "code",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L3",
+      "id": "enemy_enemymanager_enemymanager",
+      "community": 9,
+      "norm_label": "enemymanager"
+    },
+    {
+      "label": "IDamageable",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "idamageable",
+      "community": 9,
+      "norm_label": "idamageable"
+    },
+    {
+      "label": "Parameters",
+      "file_type": "code",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L8",
+      "id": "parameters",
+      "community": 9,
+      "norm_label": "parameters"
+    },
+    {
+      "label": ".TakeDamage()",
+      "file_type": "code",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L8",
+      "id": "enemy_enemymanager_enemymanager_takedamage",
+      "community": 9,
+      "norm_label": ".takedamage()"
+    },
+    {
+      "label": "CameraManager.cs",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L1",
+      "id": "player_cameramanager_cs",
+      "community": 8,
+      "norm_label": "cameramanager.cs"
+    },
+    {
+      "label": "CameraManager",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L3",
+      "id": "player_cameramanager_cameramanager",
+      "community": 8,
+      "norm_label": "cameramanager"
+    },
+    {
+      "label": "Transform",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L5",
+      "id": "transform",
+      "community": 8,
+      "norm_label": "transform"
+    },
+    {
+      "label": "Vector3",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L9",
+      "id": "vector3",
+      "community": 8,
+      "norm_label": "vector3"
+    },
+    {
+      "label": "BoxCollider2D",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L11",
+      "id": "boxcollider2d",
+      "community": 8,
+      "norm_label": "boxcollider2d"
+    },
+    {
+      "label": "Camera",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L21",
+      "id": "camera",
+      "community": 8,
+      "norm_label": "camera"
+    },
+    {
+      "label": ".Awake()",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L24",
+      "id": "player_cameramanager_cameramanager_awake",
+      "community": 8,
+      "norm_label": ".awake()"
+    },
+    {
+      "label": ".Start()",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L29",
+      "id": "player_cameramanager_cameramanager_start",
+      "community": 8,
+      "norm_label": ".start()"
+    },
+    {
+      "label": ".Update()",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L38",
+      "id": "player_cameramanager_cameramanager_update",
+      "community": 8,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".SetTarget()",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L47",
+      "id": "player_cameramanager_cameramanager_settarget",
+      "community": 8,
+      "norm_label": ".settarget()"
+    },
+    {
+      "label": ".SetView()",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L54",
+      "id": "player_cameramanager_cameramanager_setview",
+      "community": 8,
+      "norm_label": ".setview()"
+    },
+    {
+      "label": ".MoveCam()",
+      "file_type": "code",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L60",
+      "id": "player_cameramanager_cameramanager_movecam",
+      "community": 8,
+      "norm_label": ".movecam()"
+    },
+    {
+      "label": "PlayerActionController.cs",
+      "file_type": "code",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L1",
+      "id": "player_playeractioncontroller_cs",
+      "community": 3,
+      "norm_label": "playeractioncontroller.cs"
+    },
+    {
+      "label": "AttackElements",
+      "file_type": "code",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L5",
+      "id": "player_playeractioncontroller_attackelements",
+      "community": 3,
+      "norm_label": "attackelements"
+    },
+    {
+      "label": "AttackHitBox",
+      "file_type": "code",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L8",
+      "id": "attackhitbox",
+      "community": 3,
+      "norm_label": "attackhitbox"
+    },
+    {
+      "label": "ContactFilter2D",
+      "file_type": "code",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L9",
+      "id": "contactfilter2d",
+      "community": 3,
+      "norm_label": "contactfilter2d"
+    },
+    {
+      "label": "PlayerController.cs",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L1",
+      "id": "player_playercontroller_cs",
+      "community": 0,
+      "norm_label": "playercontroller.cs"
+    },
+    {
+      "label": "PlayerController",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L8",
+      "id": "player_playercontroller_playercontroller",
+      "community": 0,
+      "norm_label": "playercontroller"
+    },
+    {
+      "label": "SpriteRenderer",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L11",
+      "id": "spriterenderer",
+      "community": 0,
+      "norm_label": "spriterenderer"
+    },
+    {
+      "label": "CameraManager",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L22",
+      "id": "cameramanager",
+      "community": 0,
+      "norm_label": "cameramanager"
+    },
+    {
+      "label": "AudioSource",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L26",
+      "id": "audiosource",
+      "community": 0,
+      "norm_label": "audiosource"
+    },
+    {
+      "label": "PlayerInfo",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L40",
+      "id": "playerinfo",
+      "community": 0,
+      "norm_label": "playerinfo"
+    },
+    {
+      "label": "IPlayerState",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L47",
+      "id": "iplayerstate",
+      "community": 0,
+      "norm_label": "iplayerstate"
+    },
+    {
+      "label": "Collider2D",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L62",
+      "id": "collider2d",
+      "community": 0,
+      "norm_label": "collider2d"
+    },
+    {
+      "label": "RaycastHit2D",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L64",
+      "id": "raycasthit2d",
+      "community": 0,
+      "norm_label": "raycasthit2d"
+    },
+    {
+      "label": "Vector2",
+      "file_type": "code",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L20",
+      "id": "vector2",
+      "community": 3,
+      "norm_label": "vector2"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L22",
+      "id": "bool",
+      "community": 6,
+      "norm_label": "bool"
+    },
+    {
+      "label": "Action",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L124",
+      "id": "action",
+      "community": 0,
+      "norm_label": "action"
+    },
+    {
+      "label": ".Awake()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L127",
+      "id": "player_playercontroller_playercontroller_awake",
+      "community": 0,
+      "norm_label": ".awake()"
+    },
+    {
+      "label": ".Start()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L140",
+      "id": "player_playercontroller_playercontroller_start",
+      "community": 0,
+      "norm_label": ".start()"
+    },
+    {
+      "label": ".StartUI()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L154",
+      "id": "player_playercontroller_playercontroller_startui",
+      "community": 0,
+      "norm_label": ".startui()"
+    },
+    {
+      "label": ".FixedUpdate()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L161",
+      "id": "player_playercontroller_playercontroller_fixedupdate",
+      "community": 0,
+      "norm_label": ".fixedupdate()"
+    },
+    {
+      "label": ".OnMove()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L180",
+      "id": "player_playercontroller_playercontroller_onmove",
+      "community": 0,
+      "norm_label": ".onmove()"
+    },
+    {
+      "label": ".OnSprint()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L195",
+      "id": "player_playercontroller_playercontroller_onsprint",
+      "community": 0,
+      "norm_label": ".onsprint()"
+    },
+    {
+      "label": ".OnJump()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L200",
+      "id": "player_playercontroller_playercontroller_onjump",
+      "community": 0,
+      "norm_label": ".onjump()"
+    },
+    {
+      "label": ".OnAttack()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L205",
+      "id": "player_playercontroller_playercontroller_onattack",
+      "community": 0,
+      "norm_label": ".onattack()"
+    },
+    {
+      "label": ".OnShot()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L210",
+      "id": "player_playercontroller_playercontroller_onshot",
+      "community": 0,
+      "norm_label": ".onshot()"
+    },
+    {
+      "label": ".ShotBullet()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L225",
+      "id": "player_playercontroller_playercontroller_shotbullet",
+      "community": 0,
+      "norm_label": ".shotbullet()"
+    },
+    {
+      "label": ".OnCrouch()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L231",
+      "id": "player_playercontroller_playercontroller_oncrouch",
+      "community": 0,
+      "norm_label": ".oncrouch()"
+    },
+    {
+      "label": ".SetIdleState()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L236",
+      "id": "player_playercontroller_playercontroller_setidlestate",
+      "community": 0,
+      "norm_label": ".setidlestate()"
+    },
+    {
+      "label": ".CheckDir()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L243",
+      "id": "player_playercontroller_playercontroller_checkdir",
+      "community": 0,
+      "norm_label": ".checkdir()"
+    },
+    {
+      "label": ".ChangeState()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L255",
+      "id": "player_playercontroller_playercontroller_changestate",
+      "community": 0,
+      "norm_label": ".changestate()"
+    },
+    {
+      "label": ".CheckState()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L264",
+      "id": "player_playercontroller_playercontroller_checkstate",
+      "community": 0,
+      "norm_label": ".checkstate()"
+    },
+    {
+      "label": ".IdleCount()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L291",
+      "id": "player_playercontroller_playercontroller_idlecount",
+      "community": 0,
+      "norm_label": ".idlecount()"
+    },
+    {
+      "label": ".PlaySound()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L299",
+      "id": "player_playercontroller_playercontroller_playsound",
+      "community": 0,
+      "norm_label": ".playsound()"
+    },
+    {
+      "label": ".ChangeIdleMotion()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L306",
+      "id": "player_playercontroller_playercontroller_changeidlemotion",
+      "community": 0,
+      "norm_label": ".changeidlemotion()"
+    },
+    {
+      "label": ".PlayIdleSound()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L313",
+      "id": "player_playercontroller_playercontroller_playidlesound",
+      "community": 0,
+      "norm_label": ".playidlesound()"
+    },
+    {
+      "label": ".CheckTick()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L322",
+      "id": "player_playercontroller_playercontroller_checktick",
+      "community": 0,
+      "norm_label": ".checktick()"
+    },
+    {
+      "label": ".ChangeCanAttack()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L331",
+      "id": "player_playercontroller_playercontroller_changecanattack",
+      "community": 0,
+      "norm_label": ".changecanattack()"
+    },
+    {
+      "label": ".IsLand()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L342",
+      "id": "player_playercontroller_playercontroller_island",
+      "community": 0,
+      "norm_label": ".island()"
+    },
+    {
+      "label": ".TakeDamage()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L350",
+      "id": "player_playercontroller_playercontroller_takedamage",
+      "community": 0,
+      "norm_label": ".takedamage()"
+    },
+    {
+      "label": "OnDrawGizmos()",
+      "file_type": "code",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L370",
+      "id": "player_playercontroller_ondrawgizmos",
+      "community": 0,
+      "norm_label": "ondrawgizmos()"
+    },
+    {
+      "label": "PlayerMoveController.cs",
+      "file_type": "code",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L1",
+      "id": "player_playermovecontroller_cs",
+      "community": 3,
+      "norm_label": "playermovecontroller.cs"
+    },
+    {
+      "label": "MoveElements",
+      "file_type": "code",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L5",
+      "id": "player_playermovecontroller_moveelements",
+      "community": 3,
+      "norm_label": "moveelements"
+    },
+    {
+      "label": ".Run()",
+      "file_type": "code",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L26",
+      "id": "player_playermovecontroller_moveelements_run",
+      "community": 3,
+      "norm_label": ".run()"
+    },
+    {
+      "label": ".Walk()",
+      "file_type": "code",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L31",
+      "id": "player_playermovecontroller_moveelements_walk",
+      "community": 3,
+      "norm_label": ".walk()"
+    },
+    {
+      "label": "PlayerInfo.cs",
+      "file_type": "code",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L1",
+      "id": "player_playerinfo_playerinfo_cs",
+      "community": 9,
+      "norm_label": "playerinfo.cs"
+    },
+    {
+      "label": "PlayerInfo",
+      "file_type": "code",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L1",
+      "id": "playerinfo_playerinfo_playerinfo",
+      "community": 9,
+      "norm_label": "playerinfo"
+    },
+    {
+      "label": "MoveElements",
+      "file_type": "code",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L6",
+      "id": "moveelements",
+      "community": 9,
+      "norm_label": "moveelements"
+    },
+    {
+      "label": "AttackElements",
+      "file_type": "code",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L7",
+      "id": "attackelements",
+      "community": 9,
+      "norm_label": "attackelements"
+    },
+    {
+      "label": "DialogueData.cs",
+      "file_type": "code",
+      "source_file": "Util/DialogueData.cs",
+      "source_location": "L1",
+      "id": "util_dialoguedata_cs",
+      "community": 6,
+      "norm_label": "dialoguedata.cs"
+    },
+    {
+      "label": "DialogueData",
+      "file_type": "code",
+      "source_file": "Util/DialogueData.cs",
+      "source_location": "L4",
+      "id": "util_dialoguedata_dialoguedata",
+      "community": 6,
+      "norm_label": "dialoguedata"
+    },
+    {
+      "label": "DialogueSO.cs",
+      "file_type": "code",
+      "source_file": "Util/DialogueSO.cs",
+      "source_location": "L1",
+      "id": "util_dialogueso_cs",
+      "community": 5,
+      "norm_label": "dialogueso.cs"
+    },
+    {
+      "label": "DialogueSO",
+      "file_type": "code",
+      "source_file": "Util/DialogueSO.cs",
+      "source_location": "L4",
+      "id": "util_dialogueso_dialogueso",
+      "community": 5,
+      "norm_label": "dialogueso"
+    },
+    {
+      "label": "ScriptableObject",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "scriptableobject",
+      "community": 5,
+      "norm_label": "scriptableobject"
+    },
+    {
+      "label": "ExcelToJson.cs",
+      "file_type": "code",
+      "source_file": "Util/ExcelToJson.cs",
+      "source_location": "L1",
+      "id": "util_exceltojson_cs",
+      "community": 14,
+      "norm_label": "exceltojson.cs"
+    },
+    {
+      "label": "Excel",
+      "file_type": "code",
+      "source_file": "Util/ExcelToJson.cs",
+      "source_location": "L3",
+      "id": "util_exceltojson_excel",
+      "community": 14,
+      "norm_label": "excel"
+    },
+    {
+      "label": "ExcelToJson",
+      "file_type": "code",
+      "source_file": "Util/ExcelToJson.cs",
+      "source_location": "L5",
+      "id": "util_exceltojson_exceltojson",
+      "community": 14,
+      "norm_label": "exceltojson"
+    },
+    {
+      "label": "ExcelToScriptable.cs",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L1",
+      "id": "util_exceltoscriptable_cs",
+      "community": 13,
+      "norm_label": "exceltoscriptable.cs"
+    },
+    {
+      "label": "Excel",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L8",
+      "id": "util_exceltoscriptable_excel",
+      "community": 13,
+      "norm_label": "excel"
+    },
+    {
+      "label": "ExcelToScriptable",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L11",
+      "id": "util_exceltoscriptable_exceltoscriptable",
+      "community": 6,
+      "norm_label": "exceltoscriptable"
+    },
+    {
+      "label": "FetchExcel()",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L16",
+      "id": "util_exceltoscriptable_fetchexcel",
+      "community": 13,
+      "norm_label": "fetchexcel()"
+    },
+    {
+      "label": "CheckFiles()",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L25",
+      "id": "util_exceltoscriptable_checkfiles",
+      "community": 13,
+      "norm_label": "checkfiles()"
+    },
+    {
+      "label": "GetTables()",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L37",
+      "id": "util_exceltoscriptable_gettables",
+      "community": 13,
+      "norm_label": "gettables()"
+    },
+    {
+      "label": "CreateScriptables()",
+      "file_type": "code",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L49",
+      "id": "util_exceltoscriptable_createscriptables",
+      "community": 13,
+      "norm_label": "createscriptables()"
+    },
+    {
+      "label": "StatusData.cs",
+      "file_type": "code",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L1",
+      "id": "util_statusdata_cs",
+      "community": 6,
+      "norm_label": "statusdata.cs"
+    },
+    {
+      "label": "StatusData",
+      "file_type": "code",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L4",
+      "id": "util_statusdata_statusdata",
+      "community": 6,
+      "norm_label": "statusdata"
+    },
+    {
+      "label": "StatusSO.cs",
+      "file_type": "code",
+      "source_file": "Util/StatusSO.cs",
+      "source_location": "L1",
+      "id": "util_statusso_cs",
+      "community": 5,
+      "norm_label": "statusso.cs"
+    },
+    {
+      "label": "StatusSO",
+      "file_type": "code",
+      "source_file": "Util/StatusSO.cs",
+      "source_location": "L4",
+      "id": "util_statusso_statusso",
+      "community": 5,
+      "norm_label": "statusso"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CharacterController.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "charactercontroller_cs",
+      "target": "01_scripts_charactercontroller_charactercontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CharacterController.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "01_scripts_charactercontroller_charactercontroller",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "MemoryChecker.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "01_scripts_memorychecker_memorychecker",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "manager_combatmanager_combatmanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "manager_datamanager_datamanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "manager_gamemanager_gamemanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manager_playermanager_playermanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manager_scenemanager_scenemanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "manager_uimanager_uimanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/NPCController.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "npc_npccontroller_npccontroller",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "enemy_enemymanager_enemymanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_exceltoscriptable",
+      "target": "monobehaviour",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playeridlestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playermovestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playerjumpstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playerfallstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playercrouchstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playerattackstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L292",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playerskillstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_shootstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "fsm_cs",
+      "target": "01_scripts_fsm_playerdamagestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_iplayerstate",
+      "target": "01_scripts_fsm_iplayerstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_iplayerstate",
+      "target": "01_scripts_fsm_iplayerstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_iplayerstate",
+      "target": "01_scripts_fsm_iplayerstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playeridlestate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L292",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerskillstate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerdamagestate",
+      "target": "01_scripts_fsm_iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playeridlestate",
+      "target": "01_scripts_fsm_playeridlestate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playeridlestate",
+      "target": "01_scripts_fsm_playeridlestate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playeridlestate",
+      "target": "01_scripts_fsm_playeridlestate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_playermovestate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_playermovestate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_playermovestate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_playermovestate_move",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_playermovestate_isrun",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate",
+      "target": "01_scripts_fsm_playermovestate_resetmove",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate_execute",
+      "target": "01_scripts_fsm_playermovestate_isrun",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate_execute",
+      "target": "01_scripts_fsm_playermovestate_move",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playermovestate_exit",
+      "target": "01_scripts_fsm_playermovestate_resetmove",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_playerjumpstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_playerjumpstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_playerjumpstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_playerjumpstate_checklinearvelocityy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_playerjumpstate_startjump",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate",
+      "target": "01_scripts_fsm_playerjumpstate_jump",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate_enter",
+      "target": "01_scripts_fsm_playerjumpstate_startjump",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate_execute",
+      "target": "01_scripts_fsm_playerjumpstate_jump",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerjumpstate_jump",
+      "target": "01_scripts_fsm_playerfallstate_checklinearvelocityy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate",
+      "target": "01_scripts_fsm_playerfallstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate",
+      "target": "01_scripts_fsm_playerfallstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate",
+      "target": "01_scripts_fsm_playerfallstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate",
+      "target": "01_scripts_fsm_playerfallstate_checklinearvelocityy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate",
+      "target": "01_scripts_fsm_playerfallstate_fall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate_execute",
+      "target": "01_scripts_fsm_playerfallstate_fall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerfallstate_fall",
+      "target": "01_scripts_fsm_playerfallstate_checklinearvelocityy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate",
+      "target": "01_scripts_fsm_playercrouchstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate",
+      "target": "01_scripts_fsm_playercrouchstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate",
+      "target": "01_scripts_fsm_playercrouchstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate",
+      "target": "01_scripts_fsm_playercrouchstate_startcrouch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate",
+      "target": "01_scripts_fsm_playercrouchstate_endcrouch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate_enter",
+      "target": "01_scripts_fsm_playercrouchstate_startcrouch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playercrouchstate_exit",
+      "target": "01_scripts_fsm_playercrouchstate_endcrouch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L221",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_playerattackstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L225",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_playerattackstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_playerattackstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L235",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_playerattackstate_attack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L244",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_playerattackstate_nextattackmotion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L254",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate",
+      "target": "01_scripts_fsm_playerattackstate_attackcheck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate_enter",
+      "target": "01_scripts_fsm_playerattackstate_attack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L237",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate_attack",
+      "target": "01_scripts_fsm_playerattackstate_nextattackmotion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerattackstate_attack",
+      "target": "01_scripts_fsm_playerattackstate_attackcheck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L294",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerskillstate",
+      "target": "01_scripts_fsm_playerskillstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L298",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerskillstate",
+      "target": "01_scripts_fsm_playerskillstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L302",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerskillstate",
+      "target": "01_scripts_fsm_playerskillstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L310",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate",
+      "target": "01_scripts_fsm_shootstate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate",
+      "target": "01_scripts_fsm_shootstate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate",
+      "target": "01_scripts_fsm_shootstate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L323",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate",
+      "target": "01_scripts_fsm_shootstate_fire",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L331",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate",
+      "target": "01_scripts_fsm_shootstate_checkbullethit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L312",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate_enter",
+      "target": "01_scripts_fsm_shootstate_fire",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L328",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_shootstate_fire",
+      "target": "01_scripts_fsm_shootstate_checkbullethit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L358",
+      "weight": 1.0,
+      "context": "field",
+      "source": "01_scripts_fsm_playerdamagestate",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L357",
+      "weight": 1.0,
+      "context": "field",
+      "source": "01_scripts_fsm_playerdamagestate",
+      "target": "int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L359",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerdamagestate",
+      "target": "01_scripts_fsm_playerdamagestate_enter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L377",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerdamagestate",
+      "target": "01_scripts_fsm_playerdamagestate_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FSM.cs",
+      "source_location": "L386",
+      "weight": 1.0,
+      "source": "01_scripts_fsm_playerdamagestate",
+      "target": "01_scripts_fsm_playerdamagestate_exit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "field",
+      "source": "01_scripts_parameters_parameters",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_uimanager_uimanager",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_cameramanager_cameramanager",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playeractioncontroller_attackelements",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L85",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playermovecontroller_moveelements",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_statusdata_statusdata",
+      "target": "float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_datamanager_datamanager",
+      "target": "int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/DialogueData.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_dialoguedata_dialoguedata",
+      "target": "int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_statusdata_statusdata",
+      "target": "int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MemoryChecker.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "memorychecker_cs",
+      "target": "01_scripts_memorychecker_memorychecker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "MemoryChecker.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "01_scripts_memorychecker_memorychecker",
+      "target": "01_scripts_memorychecker_memorychecker_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "parameters_cs",
+      "target": "01_scripts_parameters_parameters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "01_scripts_parameters_parameters",
+      "target": "01_scripts_parameters_parameters_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "01_scripts_parameters_parameters",
+      "target": "01_scripts_parameters_parameters_updatecurrenthp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "01_scripts_parameters_parameters",
+      "target": "01_scripts_parameters_parameters_updatemaxhp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "01_scripts_parameters_parameters",
+      "target": "01_scripts_parameters_parameters_updatehp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Parameters.cs",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "01_scripts_parameters_parameters_updatemaxhp",
+      "target": "01_scripts_parameters_parameters_updatehp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manager_combatmanager_cs",
+      "target": "manager_combatmanager_idamageable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "manager_combatmanager_cs",
+      "target": "manager_combatmanager_combatmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "manager_combatmanager_idamageable",
+      "target": "manager_combatmanager_idamageable_takedamage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "manager_combatmanager_combatmanager_calculatedamage",
+      "target": "manager_combatmanager_idamageable_takedamage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/CombatManager.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "manager_combatmanager_combatmanager",
+      "target": "manager_combatmanager_combatmanager_calculatedamage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "manager_datamanager_cs",
+      "target": "manager_datamanager_datamanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_datamanager_datamanager",
+      "target": "string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_datamanager_datamanager",
+      "target": "jsonserializeroptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "manager_datamanager_datamanager",
+      "target": "manager_datamanager_datamanager_awake",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "manager_datamanager_datamanager",
+      "target": "manager_datamanager_datamanager_savedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/DataManager.cs",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "manager_datamanager_datamanager",
+      "target": "manager_datamanager_datamanager_loaddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/DialogueData.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_dialoguedata_dialoguedata",
+      "target": "string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_exceltoscriptable_exceltoscriptable",
+      "target": "string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_statusdata_statusdata",
+      "target": "string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "manager_gamemanager_cs",
+      "target": "manager_gamemanager_gamemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "manager_gamemanager_gamemanager",
+      "target": "manager_gamemanager_gamemanager_awake",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_gamemanager_gamemanager",
+      "target": "googlespreadsheetmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_gamemanager_gamemanager",
+      "target": "datamanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GameManager.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "manager_gamemanager_gamemanager",
+      "target": "manager_gamemanager_gamemanager_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_cs",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_cs",
+      "target": "manager_googlespreadsheetmanager_createclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_cs",
+      "target": "manager_googlespreadsheetmanager_createscriptableclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L300",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_cs",
+      "target": "manager_googlespreadsheetmanager_setvariables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L392",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_cs",
+      "target": "manager_googlespreadsheetmanager_getcsharptype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "dictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_getdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_fetchgooglesheet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_processurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_loaddatagooglesheet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_isexistunavailablesheets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_addsodictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/DialogueSO.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_dialogueso_dialogueso",
+      "target": "dictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusSO.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_statusso_statusso",
+      "target": "dictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager_fetchgooglesheet",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_processurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager_processurl",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_loaddatagooglesheet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager_processurl",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_addsodictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_createclasses",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_loaddatagooglesheet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_googlespreadsheetmanager_addsodictionary",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_isexistunavailablesheets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_createscriptableclass",
+      "target": "manager_googlespreadsheetmanager_googlespreadsheetmanager_isexistunavailablesheets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_createclasses",
+      "target": "manager_googlespreadsheetmanager_createscriptableclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L282",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_createscriptableclass",
+      "target": "manager_googlespreadsheetmanager_setvariables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/GoogleSpreadSheetManager.cs",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "manager_googlespreadsheetmanager_setvariables",
+      "target": "manager_googlespreadsheetmanager_getcsharptype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manager_playermanager_cs",
+      "target": "manager_playermanager_playermanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_playermanager_playermanager",
+      "target": "playercontrols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/PlayerManager.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "manager_playermanager_playermanager",
+      "target": "manager_playermanager_playermanager_setcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manager_scenemanager_cs",
+      "target": "manager_scenemanager_scenemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "manager_scenemanager_cs",
+      "target": "manager_scenemanager_test9damage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "manager_scenemanager_cs",
+      "target": "manager_scenemanager_test19damage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "manager_scenemanager_cs",
+      "target": "manager_scenemanager_test30damage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_scenemanager_scenemanager",
+      "target": "playercontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/SceneManager.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "manager_scenemanager_scenemanager",
+      "target": "manager_scenemanager_scenemanager_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "field",
+      "source": "npc_behaviourtree_followingnode",
+      "target": "playercontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "manager_uimanager_cs",
+      "target": "manager_uimanager_uimanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_uimanager_uimanager",
+      "target": "tmp_text",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_uimanager_uimanager",
+      "target": "slider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "field",
+      "source": "manager_uimanager_uimanager",
+      "target": "ease",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "manager_uimanager_uimanager",
+      "target": "manager_uimanager_uimanager_updatebullet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "manager_uimanager_uimanager",
+      "target": "manager_uimanager_uimanager_updatehp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Manager/UIManager.cs",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "manager_uimanager_uimanager",
+      "target": "manager_uimanager_uimanager_updatemp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_cs",
+      "target": "npc_behaviourtree_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_cs",
+      "target": "npc_behaviourtree_sequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_cs",
+      "target": "npc_behaviourtree_selector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_cs",
+      "target": "npc_behaviourtree_standingnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_cs",
+      "target": "npc_behaviourtree_charmingnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_cs",
+      "target": "npc_behaviourtree_followingnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_node",
+      "target": "npc_behaviourtree_node_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_sequence",
+      "target": "npc_behaviourtree_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_selector",
+      "target": "npc_behaviourtree_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_standingnode",
+      "target": "npc_behaviourtree_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_charmingnode",
+      "target": "npc_behaviourtree_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_followingnode",
+      "target": "npc_behaviourtree_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "field",
+      "source": "npc_behaviourtree_sequence",
+      "target": "list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_sequence",
+      "target": "npc_behaviourtree_sequence_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_sequence",
+      "target": "npc_behaviourtree_sequence_addsequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "field",
+      "source": "npc_behaviourtree_selector",
+      "target": "list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "source": "ally_catcontroller_catcontroller",
+      "target": "list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_sequence_evaluate",
+      "target": "npc_behaviourtree_followingnode_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_selector",
+      "target": "npc_behaviourtree_selector_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_selector",
+      "target": "npc_behaviourtree_selector_addselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_selector_evaluate",
+      "target": "npc_behaviourtree_followingnode_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_standingnode",
+      "target": "npc_behaviourtree_standingnode_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_charmingnode",
+      "target": "npc_behaviourtree_charmingnode_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L112",
+      "weight": 1.0,
+      "context": "field",
+      "source": "npc_behaviourtree_followingnode",
+      "target": "npccontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/BehaviourTree.cs",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "npc_behaviourtree_followingnode",
+      "target": "npc_behaviourtree_followingnode_evaluate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "ally_catcontroller_catcontroller",
+      "target": "npccontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/NPCController.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "npc_npccontroller_cs",
+      "target": "npc_npccontroller_npccontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/NPCController.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "source": "npc_npccontroller_npccontroller",
+      "target": "node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "npc_ally_catcontroller_cs",
+      "target": "ally_catcontroller_catcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ally_catcontroller_catcontroller",
+      "target": "ally_catcontroller_catcontroller_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Ally/CatController.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "ally_catcontroller_catcontroller",
+      "target": "ally_catcontroller_catcontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "npc_enemy_enemymanager_cs",
+      "target": "enemy_enemymanager_enemymanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "enemy_enemymanager_enemymanager",
+      "target": "idamageable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "source": "enemy_enemymanager_enemymanager",
+      "target": "parameters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "NPC/Enemy/EnemyManager.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "enemy_enemymanager_enemymanager",
+      "target": "enemy_enemymanager_enemymanager_takedamage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "idamageable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "source": "playerinfo_playerinfo_playerinfo",
+      "target": "parameters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "player_cameramanager_cs",
+      "target": "player_cameramanager_cameramanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_cameramanager_cameramanager",
+      "target": "transform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_cameramanager_cameramanager",
+      "target": "vector3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_cameramanager_cameramanager",
+      "target": "boxcollider2d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_cameramanager_cameramanager",
+      "target": "camera",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "player_cameramanager_cameramanager_awake",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "player_cameramanager_cameramanager_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "player_cameramanager_cameramanager_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "player_cameramanager_cameramanager_settarget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "player_cameramanager_cameramanager_setview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager",
+      "target": "player_cameramanager_cameramanager_movecam",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/CameraManager.cs",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "player_cameramanager_cameramanager_update",
+      "target": "player_cameramanager_cameramanager_movecam",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "player_playeractioncontroller_cs",
+      "target": "player_playeractioncontroller_attackelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playeractioncontroller_attackelements",
+      "target": "attackhitbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerActionController.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playeractioncontroller_attackelements",
+      "target": "contactfilter2d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "player_playercontroller_cs",
+      "target": "player_playercontroller_playercontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L370",
+      "weight": 1.0,
+      "source": "player_playercontroller_cs",
+      "target": "player_playercontroller_ondrawgizmos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "spriterenderer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "cameramanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "audiosource",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "playerinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "iplayerstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "collider2d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "raycasthit2d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "vector2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "bool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L124",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playercontroller_playercontroller",
+      "target": "action",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_awake",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_startui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L161",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_fixedupdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_onmove",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_onsprint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_onjump",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_onattack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_onshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L225",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_shotbullet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L231",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_oncrouch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L236",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_setidlestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_checkdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L255",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_changestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L264",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_checkstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L291",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_idlecount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L299",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_playsound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L306",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_changeidlemotion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L313",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_playidlesound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L322",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_checktick",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L331",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_changecanattack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L342",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_island",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L350",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller",
+      "target": "player_playercontroller_playercontroller_takedamage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "field",
+      "source": "player_playermovecontroller_moveelements",
+      "target": "vector2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "field",
+      "source": "util_statusdata_statusdata",
+      "target": "bool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_start",
+      "target": "player_playercontroller_playercontroller_startui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_setidlestate",
+      "target": "player_playercontroller_playercontroller_changecanattack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L239",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_setidlestate",
+      "target": "player_playercontroller_playercontroller_changestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L268",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_checkstate",
+      "target": "player_playercontroller_playercontroller_changestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L346",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_island",
+      "target": "player_playercontroller_playercontroller_changestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L357",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_takedamage",
+      "target": "player_playercontroller_playercontroller_changestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerController.cs",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "player_playercontroller_playercontroller_checkstate",
+      "target": "player_playercontroller_playercontroller_changecanattack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "player_playermovecontroller_cs",
+      "target": "player_playermovecontroller_moveelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "player_playermovecontroller_moveelements",
+      "target": "player_playermovecontroller_moveelements_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerMoveController.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "player_playermovecontroller_moveelements",
+      "target": "player_playermovecontroller_moveelements_walk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "player_playerinfo_playerinfo_cs",
+      "target": "playerinfo_playerinfo_playerinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field",
+      "source": "playerinfo_playerinfo_playerinfo",
+      "target": "moveelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Player/PlayerInfo/PlayerInfo.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field",
+      "source": "playerinfo_playerinfo_playerinfo",
+      "target": "attackelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/DialogueData.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "util_dialoguedata_cs",
+      "target": "util_dialoguedata_dialoguedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/DialogueSO.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "util_dialogueso_cs",
+      "target": "util_dialogueso_dialogueso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/DialogueSO.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "util_dialogueso_dialogueso",
+      "target": "scriptableobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusSO.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "util_statusso_statusso",
+      "target": "scriptableobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToJson.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "util_exceltojson_cs",
+      "target": "util_exceltojson_excel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToJson.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "util_exceltojson_cs",
+      "target": "util_exceltojson_exceltojson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_cs",
+      "target": "util_exceltoscriptable_excel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_cs",
+      "target": "util_exceltoscriptable_exceltoscriptable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_cs",
+      "target": "util_exceltoscriptable_fetchexcel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_cs",
+      "target": "util_exceltoscriptable_checkfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_cs",
+      "target": "util_exceltoscriptable_gettables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_cs",
+      "target": "util_exceltoscriptable_createscriptables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_fetchexcel",
+      "target": "util_exceltoscriptable_checkfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_checkfiles",
+      "target": "util_exceltoscriptable_gettables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/ExcelToScriptable.cs",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "util_exceltoscriptable_gettables",
+      "target": "util_exceltoscriptable_createscriptables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusData.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "util_statusdata_cs",
+      "target": "util_statusdata_statusdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Util/StatusSO.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "util_statusso_cs",
+      "target": "util_statusso_statusso",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "926f9b5dfee9c40e984b7da2bfcf30c0df5de031"
+}

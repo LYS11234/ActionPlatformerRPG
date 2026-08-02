@@ -144,8 +144,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         CanAttack = true;
         PlayerData.MoveStatus.StandOffset = new Vector2(Collider.offset.x, Collider.offset.y);
         PlayerData.MoveStatus.StandSize = new Vector2(Collider.size.x, Collider.size.y);
-        PlayerData.MoveStatus.CrouchOffset = new Vector2(Collider.offset.x, -0.55f);
-        PlayerData.MoveStatus.CrouchSize = new Vector2(Collider.size.x, PlayerData.MoveStatus.StandSize.y * 0.5f);
+        PlayerData.MoveStatus.CrouchOffset = new Vector2(Collider.offset.x, 0.7457407f);
+        PlayerData.MoveStatus.CrouchSize = new Vector2(Collider.size.x, 1.513318f);
         PlayerData.Parameters = new Parameters();
         StartUI();
         currentState.Enter(this);
